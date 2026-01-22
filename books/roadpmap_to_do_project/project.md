@@ -30,20 +30,23 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - See only the null values with pandas options and then delete the SAMPLES WITH THE NULL VALUES with pandas (.dropna)
 
 ### 3.2 Analyze the daya, and understanding how works
-**DISTRIBUTION OF THE DATA (FIND THE ERROS IN THE DATA -> SKEWED DATA AND OUTLIERS)**
+**DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED DATA AND OUTLIERS)**
 - Scatter plot -> see the correlation between 2 features (how 2 features works together), just do with some features with the most correlation
 - Histogram -> see if the data are balanced and skewed (in this case very different values ​​can alter the average) (how a feature work)
 - Box Plot -> resume the distribution of the feature, and find outliers 
 - AND OTHERS PLOT
-- The meaning of visualyze the distribution the data it's to find the better model, asymmetrical data and find outliers
+- The meaning of visualyze the d
+
 **SKEWED DATA**
 - If you found the skewed data and outliers, the first thing u need to fix it's the skewed data, and then the outliers
 - SKEWED DATA IT'S THE ASYMMETRICAL DATA LIKE IN THE EXAMPLE
 - We are see 100 data about followers in the instagram, 90 of then have 100 followers and the other 10 have 100.000 followers, so the average are 10.009 followers, what doesn't matches with the real life.
 - Pulls more to one side, LIKE A WAVE YESSSS DAMN
+
 **OUTLIERS**
 - Different to the skewed, outliers are some (little) quantity of extremitys data, skewed are more data, outliers are points, a lower quantity
 - Doesn't pulls more to one side, it's more like a nemo point, in nowhere but exits and compromises the model learning
+
 **TARGET BALANCE**
 - See if the classes are good distribution, (not like 99% spam and 1% not spam)
 
