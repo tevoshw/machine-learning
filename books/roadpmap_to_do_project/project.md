@@ -35,7 +35,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Histogram -> see if the data are balanced and skewed (in this case very different values ​​can alter the average) (how a feature work)
 - Box Plot -> resume the distribution of the feature, and find outliers 
 - AND OTHERS PLOT
-- The meaning of visualyze the d
+- The meaning of visualyze the data it's to decide who models will fit better, find outlies, skewed data and others thing invisible to human eye, that can be a problem to the model learning
 
 **SKEWED DATA**
 - If you found the skewed data and outliers, the first thing u need to fix it's the skewed data, and then the outliers
