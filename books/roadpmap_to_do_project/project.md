@@ -1,4 +1,4 @@
-## HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?
+# HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?
 
 - 1. **ANALYZE THE SITUATION:** For what we're searching, what is the objective? How we are gonna use that?
 
@@ -6,8 +6,11 @@
 - 2. **GET THE DATA:** Import the data in the envoriment 
 
 
-- 3. **IDENTIFY AND VISUALIZE THE DATA TO GET IMPORTANT INFORMATIONS:** Identify the priorites in the dataset and study the features to found the most importants data
-
+# 3.  IDENTIFY AND VISUALIZE THE DATA TO GET IMPORTANT INFORMATIONS 
+**Identify the priorites in the dataset and select the features in the dataset**
+- High correlation (sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) )
+- Cardinality (some features have a high cardinality, so depending on the model it's better to delete theses data)
+- High null features values (some features have a high null values, so we need to delete the SAMPLES who doens't have the value)
 
 - 4. **PREPARE THE DATA FOR THE ML ALGORITHMNS:** Separate the data, in test, train, validation and more
 
