@@ -29,6 +29,24 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - See all the values per features, and then see which feature doesn't agree with the other and then DELETE THE SAMPLES WITH THE NULL VALUES
 - See only the null values with pandas options and then delete the SAMPLES WITH THE NULL VALUES with pandas (.dropna)
 
+**CATEGORIAL FEATURES**
+- Some features are objects, classes or strings, we need to analyze the important of the feature and then choose what we gonna do
+- Features like name, id, address, are irrelevant in 99% of the cases
+- Features like male or female, can be relevant in some contexts, always depending
+- The model can't learning directly with these type of data (object, string or classes), they need to be encoded into numbers for the model learning
+- Imporant categorial features, we need to transform into numbers, so we gonna use the one-hot or label encoding method, so that features will become a good feature
+
+**TIME FEATURES**
+- These type of data are dates, like 01/01/2026
+- We need to treat this data to the model doesn't learning wrong or something else
+- Can be a day, year, hour, day of week or anything related
+
+**FEATURE ENGINEERING**
+- In this case we (dev's) create new features or transform (like we do in categorial features) to improve the model
+- We can to combine features like weight and height to IMC, or price and quantity to value
+- Create bins 0-10, 10-20, 20-30
+- We can treat the data to get a more right, simple and real data
+
 ### 3.2 Analyze the daya, and understanding how works
 **DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED DATA AND OUTLIERS)**
 - Scatter plot -> see the correlation between 2 features (how 2 features works together), just do with some features with the most correlation
