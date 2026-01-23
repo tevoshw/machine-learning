@@ -49,7 +49,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 ### 3.2 Analyze the daya, and understanding how works
 **DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED DATA AND OUTLIERS)**
-- Scatter plot -> see the correlation between 2 features (how 2 features works together), just do with some features with the most correlation
+- Scatter plot -> see the correlation between 2 features (how 2 features works together), just do with some features with the most correlation, crosstab can be a good choice
 - Histogram -> see if the data are balanced and skewed (in this case very different values ​​can alter the average) (how a feature work)
 - Box Plot -> resume the distribution of the feature, and find outliers 
 - AND OTHERS PLOT
@@ -66,7 +66,8 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Doesn't pulls more to one side, it's more like a nemo point, in nowhere but exits and compromises the model learning
 
 **TARGET BALANCE**
-- See if the classes are good distribution, (not like 99% spam and 1% not spam)
+- See if the classes/targets are good distribution, (not like 99% spam and 1% not spam)
+- .value_conts() 
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
 
