@@ -1,10 +1,43 @@
 _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
-# 1. ANALYZE THE SITUATION (For what we're searching, what is the objective? How we are gonna use that?)
+# 1. ANALYZE THE SITUATION 
+### 1.1 QUESTIONS?
+**What's the real problem?**
 
+**What's the final objective?**
+- Predict: numbers
+- Classifier: classes/groups
+- Recommend
+- Found patterns
+
+**How the model will be used?**
+- A people or a system will use?
+- Need to be fast
+
+**Wich type of data will be used?**
+- Real time or historic
+- Supervised or non-supervised
+- How the dataset it's defined (big or small) (have null values, skewed data or outliers)
+
+**The model have restrictions?**
+- Memory
+- Time
+- Money
+
+**The model in the future**
+- Problem will be changed?
+- New data will come?
+
+**Define the systems of the machine learning project**
+- A (supervised or other)
+- B (batch or offline)
+- C (instances or modules)
 
 # 2. GET THE DATA (Import the data in the envoriment) 
-
+**Where's the data comes**
+- Kaggle's suport
+- A database
+- A file
 
 # 3.  IDENTIFY AND VISUALIZE THE DATA TO GET IMPORTANT INFORMATIONS 
 ### 3.1 Identify the priorites in the dataset and select the features in the dataset (Fix the data to analyze)
