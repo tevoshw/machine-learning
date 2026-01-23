@@ -56,14 +56,25 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - The meaning of visualyze the data it's to decide who models will fit better, find outlies, skewed data and others thing invisible to human eye, that can be a problem to the model learning
 
 **SKEWED DATA**
+1. Geral 
 - If you found the skewed data and outliers, the first thing u need to fix it's the skewed data, and then the outliers
 - SKEWED DATA IT'S THE ASYMMETRICAL DATA LIKE IN THE EXAMPLE
 - We are see 100 data about followers in the instagram, 90 of then have 100 followers and the other 10 have 100.000 followers, so the average are 10.009 followers, what doesn't matches with the real life.
 - Pulls more to one side, LIKE A WAVE YESSSS DAMN
+2. How to treat the skewed data?
+- Check if it's really skewed data,  so we use the .skew()
+- Then we need to understanding the type of the skewed data, if it's right or left skewed
+- Choose the right transformation: log, square root, box-cox, yeo-johnson (all a numpy, scipy and sklearn functions)
+- Then we need to compare the old data with the new to choose who gonna be the better
 
 **OUTLIERS**
+1. Geral
 - Different to the skewed, outliers are some (little) quantity of extremitys data, skewed are more data, outliers are points, a lower quantity
 - Doesn't pulls more to one side, it's more like a nemo point, in nowhere but exits and compromises the model learning
+2. How to treat the outlier data?
+- _FIRST WE NEED TO TREAT THE SKEWED DATA AND THEN THE OUTLIERS DATA_
+- Choose a way: remove, capping (limit the outliers) or keep them.
+- The capping strategy we define a limit for the data, looks like (10, 10, 15, 20, 20, 25, *500) -> (10, 10, 15, 20, 20, 25, *25)
 
 **TARGET BALANCE**
 - See if the classes are good distribution, (not like 99% spam and 1% not spam)
