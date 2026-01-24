@@ -123,7 +123,49 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - See if the classes are good distribution, (not like 99% spam and 1% not spam)
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
-#### 4.1 
+**THERE ARE DIFFERENTS PARTS FOR THE DATA IN A MACHINE LEARNING MODE, AND WE'LL GO EXPLORE ALL OF THESE STEPS RIGHT NOW**
+
+
+### 4.1 WHY?
+**WHY WE NEED TO SEPARE THE DATASET IN LITTLE DATASETS?**
+- A model can learning, and can also memorize the data, or do something else that harm the model to be efective (over and underfitting)
+- To avoid these thing of situation and improve the model learning, we split in split datasets, to test, train, verify and more things, that garanted greater power to the model and data
+
+### 4.2 TYPES OF SET
+**TRAINING SET**
+- Part of the dataset that will be used to train the model
+- Adjust the bias and wight
+- Forward, loss, backpropagation
+- Gradient descent
+- 60-80% of the data
+
+**VALIDATION SET**
+- Part of the dataset where we'll avaliation the train step, to see if are memorizing or learning
+- In this steep it's to avaliable the hyperparameters
+- We can check also, if the model have troublesl like under and overfitting
+- 10-20% of the data
+
+**TESTING SET**
+- Part that will avaliable the model with new instancies (samples)
+- Calculate the generelazation
+- 10-20% of the data
+
+
+### 4.3 STRATEGIES TO SPLIT THE SET'S
+**HOLDOUT**
+- Divide it only once the dataset, each part have a fixed role
+- Used in medium/big datasets
+- Simple, fast and easy
+- *But in small datasets, may not represent well*
+
+**K-FOLD CROSS VALIDATION**
+- Divide k times, and train the k times
+- each fold become a validation one time
+- the test set, stay separate
+- Used in small/medium datasets
+- Compare models with more efficiency, but more slow
+
+
 
 # 5. SELECT AND TRAIN THE MODEL (Analyze the models, identify who is better and train the modelsupervised or not, regression or classification, batch (offline) or online, per instancies (similar) or per model (maths) )
 
