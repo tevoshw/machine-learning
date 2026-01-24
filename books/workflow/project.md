@@ -48,20 +48,6 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Two features have the same information in diferrent data
 - Weight (meters (m) ), (centimeters (cm) ) and etc
 
-**High correlation**
-- !Sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) !
-- HEATMAP 2 DIMENSIONAL TABLE, TO SEE THE CORRELATION, the HEATMAP IT'S MORE EFFECTIVE TO NUMERICAL FEATURES, so we need to do a pre-select features, or 'delete' some str and object features
-- It's more common we use create a new df to heatmap 'df_heatmap' just with number features, and then use seaborn
-
-**Cardinality** 
-- Some features have a high cardinality, so depending on the model it's better to delete theses data
-- See all the values per features, and then see which feature have the high cardinality and then delete the feature (depeding) with a pandas option (.nunique)
-
-**NULL VALUES**
-- High null features values (some features have a high null values, so we need to delete the SAMPLES who doesn't have the value)
-- See all the values per features, and then see which feature doesn't agree with the other and then DELETE THE SAMPLES WITH THE NULL VALUES
-- See only the null values with pandas options and then delete the SAMPLES WITH THE NULL VALUES with pandas (.dropna)
-
 **CATEGORIAL FEATURES**
 - Some features are objects, classes or strings, we need to analyze the important of the feature and then choose what we gonna do
 - Features like name, id, address, are irrelevant in 99% of the cases
@@ -74,6 +60,20 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - We need to treat this data to the model doesn't learning wrong or something else
 - Can be a day, year, hour, day of week or anything related
 
+**CARDINALITY** 
+- Some features have a high cardinality, so depending on the model it's better to delete theses data
+- See all the values per features, and then see which feature have the high cardinality and then delete the feature (depeding) with a pandas option (.nunique)
+
+**NULL VALUES**
+- High null features values (some features have a high null values, so we need to delete the SAMPLES who doesn't have the value)
+- See all the values per features, and then see which feature doesn't agree with the other and then DELETE THE SAMPLES WITH THE NULL VALUES
+- See only the null values with pandas options and then delete the SAMPLES WITH THE NULL VALUES with pandas (.dropna)
+
+**HIGH CORRELATION**
+- !Sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) !
+- HEATMAP 2 DIMENSIONAL TABLE, TO SEE THE CORRELATION, the HEATMAP IT'S MORE EFFECTIVE TO NUMERICAL FEATURES, so we need to do a pre-select features, or 'delete' some str and object features
+- It's more common we use create a new df to heatmap 'df_heatmap' just with number features, and then use seaborn
+
 **FEATURE ENGINEERING**
 - In this case we (dev's) create new features or transform (like we do in categorial features) to improve the model
 - We can to combine features like weight and height to IMC, or price and quantity to value
@@ -81,12 +81,22 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - We can treat the data to get a more right, simple and real data
 
 ### 3.2 Analyze the daya, and understanding how works
-**DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED DATA AND OUTLIERS)**
+**DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED, OUTLIERS OR NEGATIVE DATA)**
 - Scatter plot -> see the correlation between 2 features (how 2 features works together), just do with some features with the most correlation
 - Histogram -> see if the data are balanced and skewed (in this case very different values ​​can alter the average) (how a feature work)
 - Box Plot -> resume the distribution of the feature, and find outliers 
 - AND OTHERS PLOT
 - The meaning of visualyze the data it's to decide who models will fit better, find outlies, skewed data and others thing invisible to human eye, that can be a problem to the model learning
+
+
+**NEGATIVE DATA**
+1. Geral
+- Numbers numbers, in some case these type can harm the model, but in other cases can be useful
+- We can see with the .info() or .describe(), to verify if we have theses type of data, and then analyze if this data harm or  help the model
+- Have high quantity of this data or some a little?
+2.  How to treat the negatives numbers if harm the model?
+- IF THE NEGATIVE HAVE A MEANING, WE KEEP HOW LOOKS LIKE
+- IF THE NEGARTIVES DOENS'T HAVE A MEANING, WE TREAT IN 3 WAY (REMOVE, TRANSFORM IN NAN NUMBER OR CLIPPING)
 
 **SKEWED DATA**
 1. Geral 
@@ -113,6 +123,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - See if the classes are good distribution, (not like 99% spam and 1% not spam)
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
+#### 4.1 
 
 # 5. SELECT AND TRAIN THE MODEL (Analyze the models, identify who is better and train the modelsupervised or not, regression or classification, batch (offline) or online, per instancies (similar) or per model (maths) )
 
