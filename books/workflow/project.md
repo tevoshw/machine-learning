@@ -126,10 +126,22 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 **THERE ARE DIFFERENTS PARTS FOR THE DATA IN A MACHINE LEARNING MODE, AND WE'LL GO EXPLORE ALL OF THESE STEPS RIGHT NOW**
 
 
-### 4.1 WHY?
+### 4.1 WHY AND HOW STARING?
 **WHY WE NEED TO SEPARE THE DATASET IN LITTLE DATASETS?**
 - A model can learning, and can also memorize the data, or do something else that harm the model to be efective (over and underfitting)
 - To avoid these thing of situation and improve the model learning, we split in split datasets, to test, train, verify and more things, that garanted greater power to the model and data
+
+**HOW TO STARTING**
+- We need to separe in X  and Y variables
+- The X variable contains the independent features, and the Y the dependent features
+- We can use the .drop() from pandas to remove the dependent features (to get the X data)
+- And also we use x['y'] to get the Y feature
+
+**RANDOM SEED**
+- A way in functions that generate a random choose of the data
+- DATASET ->(1,2,3,4,5)
+- RANDOM 2 -> (2,4,3,5,1)
+- RANDOM 33 -> (1,3,5,4,2)
 
 ### 4.2 TYPES OF SET
 **TRAINING SET**
@@ -138,6 +150,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Forward, loss, backpropagation
 - Gradient descent
 - 60-80% of the data
+- train_test_split() from sklearn
 
 **VALIDATION SET**
 - Part of the dataset where we'll avaliation the train step, to see if are memorizing or learning
