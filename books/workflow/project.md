@@ -159,7 +159,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - *But in small datasets, may not represent well*
 
 **K-FOLD CROSS VALIDATION**
-- Divide k times, and train the k times
+- Divide in k times, and train the  in k trains
 - each fold become a validation one time
 - the test set, stay separate
 - Used in small/medium datasets
