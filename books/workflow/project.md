@@ -170,13 +170,15 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Used in medium/big datasets
 - Simple, fast and easy
 - *But in small datasets, may not represent well*
+![alt text](image-1.png)
 
 **K-FOLD CROSS VALIDATION**
-- Divide in k times, and train the  in k trains
-- each fold become a validation one time
+- Divide in k trains, in each train the dataset it's splited in a different way
+- And after verify the accurancy of each train
 - the test set, stay separate
 - Used in small/medium datasets
 - Compare models with more efficiency, but more slow
+![alt text](image-2.png)
 
 
 
