@@ -32,6 +32,10 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - A (supervised or other)
 - B (batch or offline)
 - C (instances or modules)
+- D (dataset split: holdout, crossvalidation, kfold, stratified and etc)
+- E (model strategy (not the final model): linear regression, logistic and etc)
+- F (perfomance measure: RMSE, MAE and etc)
+
 
 # 2. GET THE DATA (Import the data in the envoriment) 
 **Where's the data comes**
