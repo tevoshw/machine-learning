@@ -53,7 +53,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Features like name, id, address, are irrelevant in 99% of the cases
 - Features like male or female, can be relevant in some contexts, always depending
 - The model can't learning directly with these type of data (object, string or classes), they need to be encoded into numbers for the model learning
-- Imporant categorial features, we need to transform into numbers, so we gonna use the one-hot or label encoding method, so that features will become a good feature
+- Imporant categorial features, we need to transform into numbers, so we gonna use the one-hot or label encoding method, so that features will become a good feature (we call that ENCONDIG, in sklearn we have some encoder functions, like LABEL, ONE-HOT and ORDINAL )
 
 **TIME FEATURES**
 - These type of data are dates, like 01/01/2026
@@ -129,6 +129,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Max value in A feature: 10 // Max value in B feature: 100000 // so can harm the model
 2. How to treat (PREPROCESSING)
 - To treat the data, we use SKLEARNK SCALER functions (STANDARD, ROBUST, MINMAX)
+
 **TARGET BALANCE**
 - See if the classes are good distribution, (not like 99% spam and 1% not spam)
 
@@ -206,6 +207,21 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 
 # 5. SELECT AND TRAIN THE MODEL (Analyze the models, identify who is better and train the modelsupervised or not, regression or classification, batch (offline) or online, per instancies (similar) or per model (maths) )
+
+
+### 5.0 GERAL
+
+
+### 5.1 SYSTEM A
+
+
+
+
+#### 5.2 SYSTEM B
+
+
+
+### 5.3 SYSTEM C
 
 
 
