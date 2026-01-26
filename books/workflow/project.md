@@ -78,6 +78,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - !Sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) !
 - HEATMAP 2 DIMENSIONAL TABLE, TO SEE THE CORRELATION, the HEATMAP IT'S MORE EFFECTIVE TO NUMERICAL FEATURES, so we need to do a pre-select features, or 'delete' some str and object features
 - It's more common we use create a new df to heatmap 'df_heatmap' just with number features, and then use seaborn
+- We can't use with OBJECT, STRING OR CLASSES data, so we need to encoded this first
 
 **SCALE AWARENESS**
 - Identify features with very different numeric ranges
