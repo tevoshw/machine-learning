@@ -180,6 +180,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Divide it only once the dataset, each part have a fixed role
 - Used in medium/big datasets
 - Simple, fast and easy
+- We can use with SKLEARN train_test_split
 - *But in small datasets, may not represent well*
 ![alt text](image-1.png)
 
@@ -189,6 +190,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - the test set, stay separate
 - Used in small/medium datasets
 - Compare models with more efficiency, but more slow
+- We can use with SKLEARN KFold
 ![alt text](image-2.png)
 
 **STRATIFIED SPLIT**
@@ -197,6 +199,9 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - Train: 72 gatos / 8 cachorros
 - Validation: 9 gatos / 1 cachorro
 - Test: 9 gatos / 1 cachorro
+- We can use with SKLEARN StratiedKFold
+
+
 
 #### 4.4 PROBLEMS
 **DATA LEAKAGE**
