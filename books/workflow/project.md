@@ -67,6 +67,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 **CARDINALITY** 
 - Some features have a high cardinality, so depending on the model it's better to delete theses data
 - See all the values per features, and then see which feature have the high cardinality and then delete the feature (depeding) with a pandas option (.nunique)
+- ONLY FOR CATEGORIAL FEATURES (NUMERIC DONT ENTER)
 
 **NULL VALUES**
 - High null features values (some features have a high null values, so we need to delete the SAMPLES who doesn't have the value)
