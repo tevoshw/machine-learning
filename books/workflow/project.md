@@ -43,35 +43,57 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - A database
 - A file
 
-# 3.  IDENTIFY AND VISUALIZE THE DATA TO GET IMPORTANT INFORMATIONS 
-### 3.1 Identify the priorites in the dataset and select the features in the dataset (Fix the data to analyze) (EDA PART)
+# 3.  IDENTIFY, VISUALIZE AND PREPROCESSING THE DATA TO MODEL.
+
+### 3.1 EXPLORATORY DATA ANALYSIS (EDA) 
+
 **CONSTANT FEATURE**
-- The value are the sames, doesn't change, are irrelevant features to the model
+- DEFINITON: Are features that have all the same value for all the samples, they don't have a variability, so don't have a value to predict
+- CHARACTERISTICS: Can be numeric, object or something else
+- EXAMPLE: Country: 1. BR 2. BR 3. BR 4. BR
 
 **REDUNDANT FEATURE**
-- Two features have the same information in diferrent data
-- Weight (meters (m) ), (centimeters (cm) ) and etc
+- DEFINITION: Are more than one feature which contains the same data in a different way.
+- CHARACTERISTICS: Can be in differents units (cm or meter)
+- EXAMPLE: Weight: 100cm // 1 meter
+
 
 **CATEGORIAL FEATURES**
-- Some features are objects, classes or strings, we need to analyze the important of the feature and then choose what we gonna do
-- Features like name, id, address, are irrelevant in 99% of the cases
-- Features like male or female, can be relevant in some contexts, always depending
-- The model can't learning directly with these type of data (object, string or classes), they need to be encoded into numbers for the model learning
-- Imporant categorial features, we need to transform into numbers, so we gonna use the one-hot or label encoding method, so that features will become a good feature (we call that ENCONDIG, in sklearn we have some encoder functions, like LABEL, ONE-HOT and ORDINAL )
+- DEFINITION: Features that represents classes or objects and not numerics continuous, the model can't learning without numeric values, so it's necessary analyses that
+- CHARACTERISTICS: 
+1. Can be string, object or category;
+2. They can be very important or useless;
+3. Nominal (no order of importance) or Ordinal (with order of importance)
+- EXAMPLE: Country: BR, US, GER (nominal feature) // Position: Boss, employeer, trainee (ordinal feature)
+
 
 **TIME FEATURES**
-- These type of data are dates, like 01/01/2026
-- We need to treat this data to the model doesn't learning wrong or something else
-- Can be a day, year, hour, day of week or anything related
+- DEFINITION: Features that represents time or dates 
+- CHARACTERISTICS:
+1. Can be object, datetime or int datatype
+2. Frequency (daily, monthly or annual)
+- EXAMPLE: (01/01/2026 2024-08-15 14:32:10 timestamp) 
+1. If we put these datas like int, can be 20200101 and 20201231, and a model can think that 20200101 < 20201231
+
+
+**DUPLICATES**
+- DEFINITION: Are repeated samples, here's the problem are rows and not the features
+- CHARACTERISTICS: Can be all the fatures repeated, or some only
+- EXAMPLE: SAMPLE 1: 1, 2, 3, 4 // SAMPLE 2: 1, 2, 3, 4 (all the features) //
+SAMPLE 3: 1,2,2,4 (some only)
+
 
 **CARDINALITY** 
-- Some features have a high cardinality, so depending on the model it's better to delete theses data
-- See all the values per features, and then see which feature have the high cardinality and then delete the feature (depeding) with a pandas option (.nunique)
+- DEFINITION: A feature with high quantity of differents labels or targets (it's much more common in categorial features)
+- CHARACTERISTICS: Some numeric features have a high cardinality, and this don't harm the model, so it's more for categorial.
+- EXAMPLE: FEATURE X: LION, CAT, DOG, WHALE, ANT, BUG (AND MORE 100 EXAMPLES), all presents in one single feature 
+
 
 **NULL VALUES**
-- High null features values (some features have a high null values, so we need to delete the SAMPLES who doesn't have the value)
-- See all the values per features, and then see which feature doesn't agree with the other and then DELETE THE SAMPLES WITH THE NULL VALUES
-- See only the null values with pandas options and then delete the SAMPLES WITH THE NULL VALUES with pandas (.dropna)
+- DEFINITION: Are missing values in the dataset.
+- CHARACTERISTICS: The null valeus isn't a 0, or '' string, just doens't exist like a ghost value
+- EXAMPLE: 5 features: 1, 2, 3, ,5 (one feature is missing)
+
 
 **HIGH CORRELATION**
 - !Sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) !
