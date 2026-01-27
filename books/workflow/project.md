@@ -97,20 +97,25 @@ SAMPLE 3: 1,2,2,4 (some only)
 
 
 **HIGH CORRELATION**
-- !Sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) !
-- HEATMAP 2 DIMENSIONAL TABLE, TO SEE THE CORRELATION, the HEATMAP IT'S MORE EFFECTIVE TO NUMERICAL FEATURES, so we need to do a pre-select features, or 'delete' some str and object features
-- It's more common we use create a new df to heatmap 'df_heatmap' just with number features, and then use seaborn
-- We can't use with OBJECT, STRING OR CLASSES data, so we need to encoded this first
+- DEFINITION: Features with a correlation in the data between them (if one increases, the other also increases.) 
+- CHARACTERISTICS: 
+1. +1 and -1 are the maximum values that features can have, positives it's when they increase together, negative it's when one increase and the other decrease
+2. When features are too correlation, when we can do a feature engineering, trying to improve the model.
+3. If the correlation between a feature and the target it's bad, we can delete it, focus to improve the model ()
+4. To see the correlation it's better to do a HEATMAP
+5. The correlation just can be acessed with NUMERIC VALUES, so objects, string and more goes be an error
+- EXAMPLE: TARGET: house_price // FEATURE: total_roomns // CORRELATION: 0.6
 
 **SCALE AWARENESS**
-- Identify features with very different numeric ranges
-- Age: 50 // Wage : 100.000, in this case the model can give more importance to the wage because the big numbers, and harm the model 
+- DEFINITION: The difference between the valeus of the features, e the impact about this data in the model.
+-  CHARACTERISTICS: Without a scaling, a model can think that big numbers are more imporants them small numbers
+- EXAMPLE: Age: 50 // Wage : 100.000, in this case the model can give more importance to the wage because the big numbers, and harm the model 
 
 **FEATURE ENGINEERING**
-- In this case we (dev's) create new features or transform (like we do in categorial features) to improve the model
-- We can to combine features like weight and height to IMC, or price and quantity to value
-- Create bins 0-10, 10-20, 20-30
-- We can treat the data to get a more right, simple and real data
+- DEFINITION: The process of select, transform and create new feature (unreal), based in real features, trying always to improve the model.
+- CHARACTERISTICS: Involves thinking and know about the data
+- EXAMPLE: Instead have 2 features: weigth and height // we can do a IMC feature = weight + height
+
 
 ### 3.2 Analyze the daya, and understanding how works (EDA YET)
 **DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED, OUTLIERS, SCALE AWARANESS OR NEGATIVE DATA)**
