@@ -144,53 +144,66 @@ SAMPLE 3: 1,2,2,4 (some only)
 - EXAMPLE: 90% of the targets are 'spam' and 10% are 'not spam' 
 
 ### 3.2 CHANGE AND TRANSFORM THE DATA (PREPROCESSING) 
-**DISTRIBUTION OF THE DATA (FIND 'ERRORS' IN THE DATA -> SKEWED, OUTLIERS, SCALE AWARANESS OR NEGATIVE DATA)**
-- Scatter plot -> see the correlation between 2 features (how 2 features works together), just do with some features with the most correlation
-- Histogram -> see if the data are balanced and skewed (in this case very different values ​​can alter the average) (how a feature work)
-- Box Plot -> resume the distribution of the feature, and find outliers 
-- AND OTHERS PLOT
-- The meaning of visualyze the data it's to decide who models will fit better, find outlies, skewed data and others thing invisible to human eye, that can be a problem to the model learning
+
+**CONSTANT FEATURE**
+- TREAT: REMOVE
+- REMOVE: .drop(columns = [])
+
+**REDUNDANT FEATURE**
+- TREAT: Analyses and choose the feature who it's more advantageous, and remove the other, or just maintain  both
+- REMOVE: .drop(columns = [])
+
+**CATEGORIAL FEATURES**
+- TREAT: Verify the cardinality and null values, if are to high we remove, altough if we don't have that, we have to put it into numeric values.
+- REMOVE: df.drop(columns = [])
+- TRANSFORM: ENCODING ALGORITHMS (ONE-HOT-ENCODING or  ORDINAL-ENCODING -> based on the type of data ordinal or nominal) 
+
+**TIME FEATURES**
+- TREAT:
+
+**DUPLICATES**
+- TREAT:
+- 
+
+**CARDINALITY** 
+- TREAT:
+- 
 
 
-**NEGATIVE DATA**
-1. Geral (EDA)
-- Numbers numbers, in some case these type can harm the model, but in other cases can be useful
-- We can see with the .info() or .describe(), to verify if we have theses type of data, and then analyze if this data harm or  help the model
-- Have high quantity of this data or some a little?
-2.  How to treat the negatives numbers if harm the model? (PREPROCESSING)
-- IF THE NEGATIVE HAVE A MEANING, WE KEEP HOW LOOKS LIKE
-- IF THE NEGARTIVES DOENS'T HAVE A MEANING, WE TREAT IN 3 WAY (REMOVE, TRANSFORM IN NAN NUMBER OR CLIPPING)
+**NULL VALUES**
+- TREAT:
+- 
 
-**SKEWED DATA**
-1. Geral (EDA)
-- If you found the skewed data and outliers, the first thing u need to fix it's the skewed data, and then the outliers
-- SKEWED DATA IT'S THE ASYMMETRICAL DATA LIKE IN THE EXAMPLE
-- We are see 100 data about followers in the instagram, 90 of then have 100 followers and the other 10 have 100.000 followers, so the average are 10.009 followers, what doesn't matches with the real life.
-- Pulls more to one side, LIKE A WAVE YESSSS DAMN
-2. How to treat the skewed data? (PREPROCESSING)
-- Check if it's really skewed data,  so we use the .skew()
-- Then we need to understanding the type of the skewed data, if it's right or left skewed
-- Choose the right transformation: log, square root, box-cox, yeo-johnson (all a numpy, scipy and sklearn functions)
-- Then we need to compare the old data with the new to choose who gonna be the better
 
-**OUTLIERS**
-1. Geral (EDA)
-- Different to the skewed, outliers are some (little) quantity of extremitys data, skewed are more data, outliers are points, a lower quantity
-- Doesn't pulls more to one side, it's more like a nemo point, in nowhere but exits and compromises the model learning
-2. How to treat the outlier data? (PREPROCESSING)
-- _FIRST WE NEED TO TREAT THE SKEWED DATA AND THEN THE OUTLIERS DATA_
-- Choose a way: remove, capping (limit the outliers) or keep them.
-- The capping strategy we define a limit for the data, looks like (10, 10, 15, 20, 20, 25, *500) -> (10, 10, 15, 20, 20, 25, *25)
+**HIGH CORRELATION**
+- TREAT:
+- 
 
 **SCALE AWARENESS**
-1. Geral (EDA)
-- A data with numbers on different scales, and can harm the model
-- Max value in A feature: 10 // Max value in B feature: 100000 // so can harm the model
-2. How to treat (PREPROCESSING)
-- To treat the data, we use SKLEARNK SCALER functions (STANDARD, ROBUST, MINMAX)
+- TREAT:
+-
+
+**NEGATIVE DATA**
+- TREAT:
+-
+
+**SKEWED DATA**
+- TREAT:
+-
+
+**OUTLIERS**
+- TREAT:
+-
+
+**FEATURE ENGINEERING**
+- TREAT:
+-
+
 
 **TARGET BALANCE**
-- See if the classes are good distribution, (not like 99% spam and 1% not spam)
+- TREAT:
+-
+
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
 **THERE ARE DIFFERENTS PARTS FOR THE DATA IN A MACHINE LEARNING MODE, AND WE'LL GO EXPLORE ALL OF THESE STEPS RIGHT NOW**
