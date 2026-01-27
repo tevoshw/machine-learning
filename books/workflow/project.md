@@ -89,6 +89,7 @@ SAMPLE 3: 1,2,2,4 (some only)
 - EXAMPLE: FEATURE X: LION, CAT, DOG, WHALE, ANT, BUG (AND MORE 100 EXAMPLES), all presents in one single feature 
 
 
+
 **NULL VALUES**
 - DEFINITION: Are missing values in the dataset.
 - CHARACTERISTICS: The null valeus isn't a 0, or '' string, just doens't exist like a ghost value
@@ -99,6 +100,7 @@ SAMPLE 3: 1,2,2,4 (some only)
 - !Sometimes a feature doesn't have a hight correlation with the label, but have with others features, so we delethe that feature (!DEPENDING THE MODEL AND THE OBJECTIVE!) !
 - HEATMAP 2 DIMENSIONAL TABLE, TO SEE THE CORRELATION, the HEATMAP IT'S MORE EFFECTIVE TO NUMERICAL FEATURES, so we need to do a pre-select features, or 'delete' some str and object features
 - It's more common we use create a new df to heatmap 'df_heatmap' just with number features, and then use seaborn
+- We can't use with OBJECT, STRING OR CLASSES data, so we need to encoded this first
 
 **SCALE AWARENESS**
 - Identify features with very different numeric ranges
