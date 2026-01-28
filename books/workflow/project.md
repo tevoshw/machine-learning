@@ -108,7 +108,9 @@ SAMPLE 3: 1,2,2,4 (some only)
 
 **SCALE AWARENESS**
 - DEFINITION: The difference between the valeus of the features, e the impact about this data in the model.
--  CHARACTERISTICS: Without a scaling, a model can think that big numbers are more imporants them small numbers
+-  CHARACTERISTICS: 
+1. Without a scaling, a model can think that big numbers are more imporants them small numbers
+2. Harm models based in median or gradient (linear regression, nn and more)
 - EXAMPLE: Age: 50 // Wage : 100.000, in this case the model can give more importance to the wage because the big numbers, and harm the model 
 
 **NEGATIVE DATA**
@@ -155,54 +157,99 @@ SAMPLE 3: 1,2,2,4 (some only)
 
 **CATEGORIAL FEATURES**
 - TREAT: Verify the cardinality and null values, if are to high we remove, altough if we don't have that, we have to put it into numeric values.
-- REMOVE: df.drop(columns = [])
+- VISUALIZE: BARPLOT, COUNTPLOT
+- REMOVE: df.drop(columns = []) // + .value_counts()
 - TRANSFORM: ENCODING ALGORITHMS (ONE-HOT-ENCODING or  ORDINAL-ENCODING -> based on the type of data ordinal or nominal) 
 
 **TIME FEATURES**
-- TREAT:
+- TREAT: Convert into datetime data and then, verify cardinality, null values, sort them and see if it's relevant feature to remove or maintain
+- VISUALIZE: LINE PLOT, ROLLING MEAN PLOT
+- CONVERT: .to_datetime()
+- CARDINALITY: .nunique()
+- NULL VALUES: isnull() + .sum()
+- SORT: .sort()
+- REMOVE: .drop(columns = [])
 
 **DUPLICATES**
-- TREAT:
-- 
+- TREAT: Check if are duplicated samples (rows) or duplicated values in the features, so check if this duplicated are relevant data or not
+- DUPLICATES: .duplicated() + .sum()
+- REMOVE: .drop(columns = [])
+- OTHER WAY TO REMOVE: .drop_duplicated(subset = [])
 
 **CARDINALITY** 
-- TREAT:
-- 
+- TREAT: Check the difference between the data in the features, if it's to high, we need to analyze and if necessary remove it
+- CARDINALITY: .nunique() // dataset['column'].nunique() // dataset['column'].value_counts()
+- REMOVE: .drop(columns = [])
 
 
 **NULL VALUES**
-- TREAT:
-- 
+- TREAT: Check if we have null values, so them remove the samples with this missing data, if are a lot of samples, we remove the feature with that high value with null data
+- VISUALIZE: BARPLOT
+- NULL: .isnull() // .isnull() +.sum()
+- REMOVE: .drop(columns = [])
 
 
 **HIGH CORRELATION**
-- TREAT:
-- 
+- TREAT: Check the correlation, and we can check if we can remove or do something (only numeric numbers works, so we need to transform if we have to numeric numbers all the features)
+- VISUALIZE: HEATMAP: sns.heatmap(), PAIRPLOT, SCATTER PLOT + HUE
+- CORRELATION: .corr() 
+- REMOVE: .drop(columns = [])
 
 **SCALE AWARENESS**
-- TREAT:
--
+- TREAT: Check the different between the values (range, magnitude, units) and apply STARDANTIZATON OR NORMALIZATION
+- VISUALIZE: HISTOGRAMS, BOXPLOT
+- DIFFERENT SCALES: .describe()
+- STANDARDIZATION: StandardScaler() (sklearn)
+- NORMALIZATION: MinMaxScaler() (sklearn)
 
 **NEGATIVE DATA**
-- TREAT:
--
+- TREAT: Check if data makes sense, if makes ok, doesnt change, but not we need to remove or transform
+- VISUALZIE: HISTOGRAM, BOXPLOT, KDEPLOT, SCATTERPLOT
+- REMOVE: .drop(columns = [])
 
 **SKEWED DATA**
-- TREAT:
--
+- TREAT: Check the asymmetric, if have, right or left, and then remove these data (extreme values) or drop rows with unrealistic outliers
+- VISUALIZE: HISTOGRAM, BOXPLOT, VIOLINPLOT, SCATTERPLOT
+- SKEWED: .skew()
+- REMOVE: .drop(columns = [])
 
 **OUTLIERS**
-- TREAT:
--
+- TREAT: Check if have, and them remove if's necessary
+- VISUALIZE: SCATTER AND BOXPLOT
+- CHECK OUTLIERS: BOXPLOT
+- REMOVE: .drop(columns = [])
+
 
 **FEATURE ENGINEERING**
-- TREAT:
--
-
+- TREAT: Create and transform exist features in new features, or just delete it
+- VISUALIZE: HEATMAP, HISTOGRAM, SCATTER
+- CREATE: dataset['new_feature'] = dataset['feature_one'] + dataset['feature_two']
 
 **TARGET BALANCE**
-- TREAT:
--
+- TREAT: Verify if the balance are OK
+- VISUALIZE: BARPLOT, COUNTPLOT,
+- CHECK BALANCE: .values_counts (the target feature)
+
+--------------------PLOTS NECESSARYS TO EXPLORE THE DATA---------------------
+- JOINTPLOT
+- STRIPLOT/SWARMPLOT
+- RIDGELINEPLOT
+- HEXBIN PLOT
+- BOXPLOT GROUPED
+- CDF/ ECDF PLOT
+- HEATMAP DE MISSING VALUES
+- AUTOCORRELATION PLOT
+- RADAR, PARALLEL, PCA SCATTER, CLUSTERMAP
+
+--------------------------------- PART 2 ----------------------------
+- Correlation → heatmap, pairplot, jointplot, hexbin
+- Distribution → hist, kde, ecdf, ridgeline
+- Categorical → countplot, stripplot, box grouped
+- Outliers → box, violin, scatter, hexbin
+- Time → line, rolling mean, autocorrelation
+- Missing → missing heatmap
+
+----------------------------------------.---------------------------------------------------
 
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
