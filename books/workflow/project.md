@@ -349,29 +349,92 @@ Y = df["target"]
 g
 
 
-# 5. SELECT AND TRAIN THE MODEL (Analyze the models, identify who is better and train the modelsupervised or not, regression or classification, batch (offline) or online, per instancies (similar) or per model (maths) )
+# 5. SELECT THE SYSTEMS FOR THE MODEL
 
 
-### 5.0 GERAL
+### 5.1 SYSTEM A    
+**GERAL QUESTIONS AND THINGS**
+- How the data? labeled or not
+- Do we need to transform the problem into another formulation? (classification → regression, multi-class → binary)
+
+**SUPERVISED**
+- DEFINITION: type of Machine Learning where the model learns from abeled data, each input sample has a corresponding target (label), and the model’s goal is to learn a function that maps inputs to outputs.
+- CHARACTERISTICS:
+1. Used labeled datasets
+2. Learn a direct relantionship between features (X) ands labels (Y)
+3. Can used for: REGRESSION (continuous values) and CLASSIFICATION (classes)
+4. Perfomance is evaluated using metrics
+
+**UNSUPERVISED**
+- DEFINITION: type of Machine Learning where the model learns from unlabeled data, without a target variable, aiming to discover patterns, structures, or relationships in the data.
+- CHARACTERISTICS:
+1. Uses unlabeled datasets
+2. Does not have labels (Y)
+3. Learns hidden patterns or data structures
+4. Commonly used for: CLUSTERING and DIMENSIONALITY REDUCTION
+
+**SEMI-SUPERVISED**
+- DEFINITION: type of Machine Learning that uses a small amount of labeled data combined with a large amount of unlabeled data to improve learning performance.
+- CHARACTERISTICS:
+1. Uses both labeled and unlabeled datasets
+2. Reduces labeling cost
+3. Improves model performance when labeled data is scarce
+4. Commonly used for: CLASSIFICATION and REGRESSION
 
 
-### 5.1 SYSTEM A
-
+**REINFORCEMENT LEARNING**
+- DEFINITION: type of Machine Learning where an agent learns by interacting with an environment, taking actions and receiving rewards or penalties.
+- CHARACTERISTICS:
+1. No labeled data
+2. Learns through trial and error
+3. Uses reward signals instead of labels
+4. Goal is to maximize cumulative reward over time
 
 
 
 #### 5.2 SYSTEM B
 
+**GERAL QUESTIONS**
 
+
+**BATCH or OFFLINE**
+- DEFINITION: type of Machine Learning where the model is trained using the entire dataset at once, and the model is not updated after deployment unless it is retrained from scratch.
+- CHARACTERISTICS:
+1. Trained on a fixed dataset
+2. Does not learn incrementally
+3. Requires retraining to incorporate new data
+4. Commonly used when data does not change frequently
+
+**ONLINE**
+- DEFINITION: type of Machine Learning where the model learns incrementally, updating itself continuously as new data arrives.
+- CHARACTERISTICS:
+1. Learns one sample or a small batch at a time
+2. Adapts to new data in real time
+3. Suitable for data streams
+4. Handles concept drift better than batch learning
 
 ### 5.3 SYSTEM C
 
+**INSTANCE-BASED LEARNING**
+- DEFINITION: type of Machine Learning where the model stores training instances and makes predictions by comparing new data points to similar stored examples.
+- CHARACTERISTICS:
+1. Does not build an explicit global model
+2. Predictions are based on similarity measures
+3. High memory usage
+4. Fast training, slower inference
+
+**MODEL-BASED LEARNING**
+- DEFINITION: type of Machine Learning where the model learns a generalized function from the training data and uses this function to make predictions.
+- CHARACTERISTICS:
+1. Builds an explicit model during training
+2. Learns patterns and relationships in the data
+3. Lower memory usage at inference
+4. Requires a training phase
 
 
 
-# 6. IMPROVE THE MODEL See the erros, and try to improve the error accuracy, here goes the news predicr (with scikit model.predict) and after visualyze the performance measure (MRSE, MAE and more)
-And after, select news hyperparameters or something to improve the error measure
 
+# 6. TRAIN AND IMPROVE THE MODEL
 
 # 7. SHOW THE SOLUTION Share to the other people and the manager
 # 8. PUBLIC THE SYSTEM, ANALYZE AND ADJUST Publish to the internet, and see how goes work with new instancies
