@@ -230,7 +230,7 @@ SAMPLE 3: 1,2,2,4 (some only)
 - VISUALIZE: BARPLOT, COUNTPLOT,
 - CHECK BALANCE: .values_counts (the target feature)
 
---------------------PLOTS NECESSARYS TO EXPLORE THE DATA---------------------
+--------------------PLOTS NECESSARYS TO EXPLORE THE DATA (BONUS)---------------------
 - JOINTPLOT
 - STRIPLOT/SWARMPLOT
 - RIDGELINEPLOT
@@ -261,73 +261,92 @@ SAMPLE 3: 1,2,2,4 (some only)
 - A model can learning, and can also memorize the data, or do something else that harm the model to be efective (over and underfitting)
 - To avoid these thing of situation and improve the model learning, we split in split datasets, to test, train, verify and more things, that garanted greater power to the model and data
 
-**HOW TO STARTING**
-- We need to separe in X  and Y variables
-- The X variable contains the independent features, and the Y the dependent features
-- We can use the .drop() from pandas to remove the dependent features (to get the X data)
-- And also we use x['y'] to get the Y feature
+**X and Y**
+- DEFINITION: Split the X (independent features) and Y (dependent features), and garanted that all it's ok
+- EXAMPLE:
+``` 
+X = df.drop("target", axis=1)
+Y = df["target"]
+```
 
 **RANDOM SEED**
-- A way in functions that generate a random choose of the data
-- DATASET ->(1,2,3,4,5)
-- RANDOM 2 -> (2,4,3,5,1)
-- RANDOM 33 -> (1,3,5,4,2)
+- DEFINITION: A way in functions that generate a random choose of the data
+- EXAMPLE: DATASET ->(1,2,3,4,5) RANDOM 2 -> (2,4,3,5,1) RANDOM 33 -> (1,3,5,4,2)
+- HANDS-ON: SKLEARN PARAMETERS in train_test_split(x,y random_seed = 42)
 
 ### 4.2 TYPES OF SET
 **TRAINING SET**
-- Part of the dataset that will be used to train the model
-- Adjust the bias and wight
-- Forward, loss, backpropagation
-- Gradient descent
-- 60-80% of the data
-- train_test_split() from sklearn
+- DEFINITION: Part of the dataset that will be used to train the model, where's train will find the patterns and relationships in the data.
+- CHARACTERISTICS: 
+1. Largest portion of the dataset, often 60-80% of the data.
+2. Used to fit model parameters (weight and bias, trees split, clusters, and more parameters)
+- HANDS-ON: We can use the SKLEARN function train_test_split(), or a function with numpy to create that. 
 
-**VALIDATION SET**
-- Part of the dataset where we'll avaliation the train step, to see if are memorizing or learning
-- In this steep it's to avaliable the hyperparameters
-- We can check also, if the model have troublesl like under and overfitting
-- 10-20% of the data
+
+**VALIDATION SET or DEV TRAIN SET**
+- DEFINITION: Primarily used for hyperparameter tunning, helps to select the best model configuration without using the test data
+- CHARACTERISTICS: 
+1. Created from training data set
+2. Check if the model is learning or memorize and avoid under/overfitting
+3. Help to fit the hyperparameters (learning rate, epochs, number of trees, layes and etc) and !DOESNT CHANGE THE MODEL PARAMETERS!
+4. Get a 10-20% of the data
+5. In some cases are not necessary, just when the accuracy goes bad, (or) and we need do tunning the hyperparameters
+6. HOLDOUT: When we do the split from the train set, we remove these data (a few), and add in the validation set, in other words, the !validation data will not be data that has been trained!
+7. KFOLD: A part of the split data will become the validation set, so it's more easy working with KFOLD systems when we need to tunning the hyperparameters
+- HANDS-ON: 
+1. We can do a second split from train set, with the SKLEARN train_test_split() -> this to get the data split for validation test and then try manually 
+2. Using SEARCH FUNCTIONS from SKLEARN: GridSearchCV, RandomizerSearchCV and more.
 
 **TESTING SET**
-- Part that will avaliable the model with new instancies (samples)
-- Calculate the generelazation
-- 10-20% of the data
+- DEFITION: Check the model's perfomance on unseen data, crucial for evaluation how well the model generalization real-world examples
+- CHARACTERISTICS: 
+1. 10-20% of the data
+2. Compare the accuracy of the model with MEASURE PERFORMANCE FUNCTIONS (MSE, RMSE, MAE, R2)
+- HANDS-OM: train_test_split get the data for split test set (normally 80/20 for train test)
 
 
 ### 4.3 STRATEGIES TO SPLIT THE SET'S
 **HOLDOUT**
-- Divide it only once the dataset, each part have a fixed role
-- Used in medium/big datasets
-- Simple, fast and easy
-- We can use with SKLEARN train_test_split
-- *But in small datasets, may not represent well*
+- DEFINITION: Divide it only once the dataset, each part have a fixed role
+- CHARACTERISTICS:
+1. Used in medium/big datasets
+2. Simple, fast and easy
+3. But in small datasets, may not represent well (overfitting problem)
+- HANDS-ON: We can use with SKLEARN train_test_split(), or some function to do that
 ![alt text](image-1.png)
 
 **K-FOLD CROSS VALIDATION**
-- Divide in k trains, in each train the dataset it's splited in a different way
-- And after verify the accurancy of each train
-- the test set, stay separate
-- Used in small/medium datasets
-- Compare models with more efficiency, but more slow
-- We can use with SKLEARN KFold
+- DEFINITION: Divide in k trains and splits data, in each train the dataset it's splited in a different way, and verify the accuracy of each train with the new split data
+- CHARACTERISTICS:
+1. Train and validation set are using, test set don't enter here
+2. Used in small/medium datasets
+3. Compare models with more efficiency, but it's slower
+4. It's so powerfull to tunning hyperparameters, like we said in VALIDATION PART
+- HANDS-ON: We can use with SKLEARN KFold
 ![alt text](image-2.png)
 
 **STRATIFIED SPLIT**
-- Only used in classes problems
-- A way to split the data that garanted proportion
+- DEFINITION: A variant of K-Fold for classification problems
+- CHARACTERISTICS:
+1. Only used in classes problems
+2. A way to split the data that garanted proportion
+- EXAMPLE:
 - Train: 72 gatos / 8 cachorros
 - Validation: 9 gatos / 1 cachorro
 - Test: 9 gatos / 1 cachorro
-- We can use with SKLEARN StratiedKFold
+- HANDS-ON: Use from SKLEARN StratiedKFold()
+
 
 
 
 #### 4.4 PROBLEMS
 **DATA LEAKAGE**
-- It's when a data that should be unavailable at training test, leaks at the model
-- Test data to train data, and more
-- The model goes with a high accurancy, a overfitting case (high accurancy with data leakage means nothing)
-
+- DEFINITION: When a data that should be unavailable at training test, leaks at the model
+- CHARACTERISITCS: 
+1. The train data goes to test data
+2. High accuracy, overfitting problem
+3. High accuracy with data leake means nothing, the model memorize it
+g
 
 
 # 5. SELECT AND TRAIN THE MODEL (Analyze the models, identify who is better and train the modelsupervised or not, regression or classification, batch (offline) or online, per instancies (similar) or per model (maths) )
@@ -350,7 +369,7 @@ SAMPLE 3: 1,2,2,4 (some only)
 
 
 
-# 6. IMPROVE THE MODEL See the erros, and try to improve the error accurancy, here goes the news predicr (with scikit model.predict) and after visualyze the performance measure (MRSE, MAE and more)
+# 6. IMPROVE THE MODEL See the erros, and try to improve the error accuracy, here goes the news predicr (with scikit model.predict) and after visualyze the performance measure (MRSE, MAE and more)
 And after, select news hyperparameters or something to improve the error measure
 
 
