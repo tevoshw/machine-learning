@@ -63,7 +63,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 - CHARACTERISTICS: 
 1. Can be string, object or category;
 2. They can be very important or useless;
-3. Nominal (no order of importance) or Ordinal (with order of importance)
+3. Nominal (no order of importance), Ordinal (with order of importance) or Label (create a numeric order that doesnt exist, and we use for the Y feature)
 - EXAMPLE: Country: BR, US, GER (nominal feature) // Position: Boss, employeer, trainee (ordinal feature)
 
 
@@ -195,13 +195,6 @@ SAMPLE 3: 1,2,2,4 (some only)
 - CORRELATION: .corr() 
 - REMOVE: .drop(columns = [])
 
-**SCALE AWARENESS**
-- TREAT: Check the different between the values (range, magnitude, units) and apply STARDANTIZATON OR NORMALIZATION
-- VISUALIZE: HISTOGRAMS, BOXPLOT
-- DIFFERENT SCALES: .describe()
-- STANDARDIZATION: StandardScaler() (sklearn)
-- NORMALIZATION: MinMaxScaler() (sklearn)
-
 **NEGATIVE DATA**
 - TREAT: Check if data makes sense, if makes ok, doesnt change, but not we need to remove or transform
 - VISUALZIE: HISTOGRAM, BOXPLOT, KDEPLOT, SCATTERPLOT
@@ -229,6 +222,13 @@ SAMPLE 3: 1,2,2,4 (some only)
 - TREAT: Verify if the balance are OK
 - VISUALIZE: BARPLOT, COUNTPLOT,
 - CHECK BALANCE: .values_counts (the target feature)
+
+**SCALE AWARENESS**
+- TREAT: Check the different between the values (range, magnitude, units) and apply STARDANTIZATON OR NORMALIZATION
+- VISUALIZE: HISTOGRAMS, BOXPLOT
+- DIFFERENT SCALES: .describe()
+- STANDARDIZATION: StandardScaler() -> few outlliers, (sklearn)
+- NORMALIZATION: MinMaxScaler() (sklearn)
 
 --------------------PLOTS NECESSARYS TO EXPLORE THE DATA (BONUS)---------------------
 - JOINTPLOT
