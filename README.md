@@ -24,9 +24,12 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
  │
  ├── Data
  │   ├── EDA
- │   │   └── Data visualization and exploratory analysis
+ │   │   └── ANALYSIS
+ |   |   └── PLOTS
+ |   |
  │   ├── Preprocessing
  │   │   └── Data cleaning and transformation
+ |   |
  │   └── Split
  │       └── Train / validation / test splitting strategies
  │
