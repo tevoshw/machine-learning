@@ -12,8 +12,15 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
 
 ```text
 /BOOKS
- ├── MachineLearningGeral / Geral
- │   └── Introduction and core Machine Learning concepts
+ ├── MachineLearningGeral
+ │   |── Geral 
+ |   |   └── Introduction and core Machine Learning concepts
+ |   |── Librarys 
+ |   |    └── A doc for languages and librarys that machine learning use
+ |   |── Dictionary
+ |   |    └── Dictonary of machine learning
+ |   |── Books_to_learn 
+ |        └── Books for machine learning study
  │
  ├── Data
  │   ├── EDA
@@ -22,9 +29,6 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
  │   │   └── Data cleaning and transformation
  │   └── Split
  │       └── Train / validation / test splitting strategies
- |
- |── Librarys
- |      |── A doc for languages and librarys that machine learning use
  │
  ├── Models
  │   ├── System 1 (A, B, C)
@@ -32,9 +36,6 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
  │
  ├── Workflow
  │   └── End-to-end Machine Learning project workflow
- │
- ├── BOOKS_TO_LEARN
- |   ├── Books for machine learning study
  |               
  └── Projects (HANDS-ON)
      └── Practical examples and applied projects
@@ -50,7 +51,7 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
 ---
 ## How to Read This Repository
 
-### !!! For Beginners
+### ! For Beginners
 
 If you are starting in Machine Learning, follow this recommended order:
 
