@@ -22,6 +22,9 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
  │   │   └── Data cleaning and transformation
  │   └── Split
  │       └── Train / validation / test splitting strategies
+ |
+ |── Librarys
+ |      |── A doc for languages and librarys that machine learning use
  │
  ├── Models
  │   ├── System 1 (A, B, C)
