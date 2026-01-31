@@ -179,9 +179,16 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 ### 5.4 SYSTEM D
 **THIS PART WAS DEFINIED IN #4**
 
-### 5.5 SYSTEM E and F
-**THIS PART WILL BE DEFINED IN OTHER FOLDER, WE GONNA ANALYZE PART PER PART TO SEE THE BEST OF MACHINE LEARNING**
-- WORKFLOW/SYSTEM_E_f
+### 5.5 SYSTEM E 
+**GERAL**
+- DEFINITION: Ever model have 6 characteristics that defined them.
+- CHARACTERISTICS:
+1. Representation: How the model transfrom the x in y (y = f(x) ), ever model choose a function different
+2. Parameters: The things that the model learn and stores
+3. Objective Function: A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more)
+4. Optimization method: How the model update the parameters (Gradient Descent, Adam, SGD)
+5. Decision or exit criterion: How the model choose the final input (model calculate a number and RETURN) (model calculate 70% to be a class, and now what he gonna do?)
+6. Hyperparameters: Control how the model learning (Complexity, regularization and more)
 
 
 

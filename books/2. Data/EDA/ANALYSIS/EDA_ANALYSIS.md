@@ -2,6 +2,8 @@
 # EXPLORATORY DATA ANALYSIS (EDA) 
 
 ## GERAL ANALYZE OF THE DATA
+**OBJECTIVE**
+- The real objective of EDA, it's to understanding better the data, how works and help to choose the better model
 
 **TYPE OF DATA**
 - HEAD, TAIL, DESCRIBE
