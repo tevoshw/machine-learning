@@ -24,8 +24,8 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
  │
  ├── Data
  │   ├── EDA
- │   │   └── ANALYSIS
- |   |   └── PLOTS
+ │   │   └── ANALYSIS: Where we gonna analyses the dataset and the problems, trying to improve the data and avoid data breaches (teorical)
+ |   |   └── PLOTS: Where we gonna analyses the graphics and the dats 
  |   |
  │   ├── Preprocessing
  │   │   └── Data cleaning and transformation

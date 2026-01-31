@@ -9,6 +9,8 @@
 **SHAPE**
 - .SHAPE
 
+
+
 ## STRUCTURE AND QUALITY OF THE FEATURES
 **CONSTANT FEATURE**
 - DEFINITON: Are features that have all the same value for all the samples, they don't have a variability, so don't have a value to predict
@@ -31,6 +33,7 @@
 - EXAMPLE: FEATURE X: LION, CAT, DOG, WHALE, ANT, BUG (AND MORE 100 EXAMPLES), all presents in one single feature 
 
 ## TYPE OF THE DATA
+
 **CATEGORIAL FEATURES**
 - DEFINITION: Features that represents classes or objects and not numerics continuous, the model can't learning without numeric values, so it's necessary analyses that
 - CHARACTERISTICS: 
@@ -38,7 +41,6 @@
 2. They can be very important or useless;
 3. Nominal (no order of importance), Ordinal (with order of importance) or Label (create a numeric order that doesnt exist, and we use for the Y feature)
 - EXAMPLE: Country: BR, US, GER (nominal feature) // Position: Boss, employeer, trainee (ordinal feature)
-
 
 **TIME FEATURES**
 - DEFINITION: Features that represents time or dates 
@@ -55,6 +57,8 @@
 - DEFINITION: Are missing values in the dataset.
 - CHARACTERISTICS: The null valeus isn't a 0, or '' string, just doens't exist like a ghost value
 - EXAMPLE: 5 features: 1, 2, 3, ,5 (one feature is missing)
+- VISUALIZE:
+1. Histogram
 
 **NEGATIVE DATA**
 - DEFINITION: Features with negatives values.
@@ -69,6 +73,8 @@
 - DEFINITION: Occurs when data distribution it's not symmetrical, pull to one side (right-skewed or left-skewed)
 - CHARACTERISTICS: It's not an error, but can harm the model
 - EXAMPLE: 90 persons has 10k wage, 10 persons has a 100k wage, the media it's a unreal number, because the 10 persons, change the values.
+- VISUALIZE: 
+1. Histogram
 
 
 **OUTLIERS**
@@ -77,6 +83,8 @@
 1. Normally are few values
 2. Different from the skewed that are a most, outliers are a few.
 - EXAMPLE: Height: 1.90, 1.91, 1.85. 5.00 -> these are a outlier
+VISUALIZE:
+1. Histogram
 
 
 ## RELATION BETWEEN FEATURES
@@ -86,12 +94,19 @@
 - CHARACTERISTICS: 
 1. +1 and -1 are the maximum values that features can have, positives it's when they increase together, negative it's when one increase and the other decrease
 2. When features are too correlation, when we can do a feature engineering, trying to improve the model.
-3. If the correlation between a feature and the target it's bad, we can delete it, focus to improve the model ()
+3. Low correlation does not necessarily mean the feature is useless, especially for non-linear models.
 4. To see the correlation it's better to do a HEATMAP
 5. The correlation just can be acessed with NUMERIC VALUES, so objects, string and more goes be an error
 - EXAMPLE: TARGET: house_price // FEATURE: total_roomns // CORRELATION: 0.6
 
-## MODEL SENSITY
+**FEATURE X TARGET**
+- DEFINITION: Check the features X features
+- CHARACTERISTICS:
+1. Helps identify predictive features
+2. Supports feature selection
+3. Can reveal non-linear relationships
+
+## MODEL SENSITIVITY
 
 **SCALE AWARENESS**
 - DEFINITION: The difference between the valeus of the features, e the impact about this data in the model.
@@ -112,4 +127,13 @@
 **FEATURE ENGINEERING**
 - DEFINITION: The process of select, transform and create new feature (unreal), based in real features, trying always to improve the model.
 - CHARACTERISTICS: Involves thinking and know about the data
-- EXAMPLE: Instead have 2 features: weigth and height // we can do a IMC feature = weight + height
+- EXAMPLE: Instead have 2 features: weigth and height // we can do a IMC feature = weight / height²
+
+## ANALYSES OF TARGET (Y)
+
+**TARGET Y**
+- DEFINITION: Check the target understanding better the data and try to improve more.
+- CHARACTERISTICS:
+1. Type of the target
+2. Distribution of the target
+3. Check outliers in target

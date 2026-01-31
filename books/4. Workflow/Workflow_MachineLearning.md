@@ -139,7 +139,6 @@ Y = df["target"]
 2. Simple, fast and easy
 3. But in small datasets, may not represent well (overfitting problem)
 - HANDS-ON: We can use with SKLEARN train_test_split(), or some function to do that
-![alt text](image-1.png)
 
 **K-FOLD CROSS VALIDATION**
 - DEFINITION: Divide in k trains and splits data, in each train the dataset it's splited in a different way, and verify the accuracy of each train with the new split data
@@ -149,7 +148,6 @@ Y = df["target"]
 3. Compare models with more efficiency, but it's slower
 4. It's so powerfull to tunning hyperparameters, like we said in VALIDATION PART
 - HANDS-ON: We can use with SKLEARN KFold
-![alt text](image-2.png)
 
 **STRATIFIED SPLIT**
 - DEFINITION: A variant of K-Fold for classification problems
