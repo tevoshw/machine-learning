@@ -17,8 +17,7 @@
 
 
 ## PARAMETERS
+**THE VALUES INSIDES THE REPRESENTATION**
+
 - Coefficients w_1 = Contribution that each feature have, deffines the slope / direction of the line or hyperplane
 - Bias (intercept) b = Adjusment to the predical values, defines where the line starts, higher or lower on the graph
-
-
-## OBJECTIVE FUNCTION or LOSS FUNCTION
