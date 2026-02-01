@@ -11,44 +11,34 @@ The repository is divided into two main parts: **BOOKS** (theoretical and concep
 ### BOOKS
 
 ```text
-/BOOKS
- ├── MachineLearningGeral
- │   |── Geral 
- |   |   └── Introduction and core Machine Learning concepts
- |   |── Librarys 
- |   |    └── A doc for languages and librarys that machine learning use
- |   |── Dictionary
- |   |    └── Dictonary of machine learning
- |   |── Books_to_learn 
- |        └── Books for machine learning study
- │
- ├── Data
- │   ├── EDA
- │   │   └── ANALYSIS: Where we gonna analyses the dataset and the problems, trying to improve the data and avoid data breaches (teorical)
- |   |   └── PLOTS: Where we gonna analyses the graphics and the dats 
- |   |
- │   ├── Preprocessing
- │   │   └── Data cleaning and transformation
- |   |
- │   └── Split
- │       └── Train / validation / test splitting strategies
- │
- ├── Models
- │   ├── System 1 (A, B, C)
- │   └── System 2 (D, E, F)
- │
- ├── Workflow
- │   └── End-to-end Machine Learning project workflow
- |               
- └── Projects (HANDS-ON)
-     └── Practical examples and applied projects
-
-/SRC
- ├── DATASETS
- │   └── Datasets used in experiments and projects
- │
- └── PROJECTS
-     └── Source code implementations related to the BOOKS section
+├── 📁 books (Theoretical Foundation & Documentation)
+│   ├── 📁 1. MachineLearningGeral: A baseline for machine learning and basics things.
+│   │   ├── 📝 Books_to_learn.md: Curated list of ML literature and resources for study.
+│   │   ├── 📝 Dictionary.md: Glossary of technical terms (Overfitting, Bias, etc).
+│   │   ├── 📝 Geral.md: Intro to ML concepts (Supervised, Unsupervised, etc).
+│   │   └── 📝 Librarys.md: Documentation about languages and librarys about machine learning.
+│   ├── 📁 2. Data
+│   │   ├── 📁 EDA: Techniques for understanding data before modeling.
+│   │   │   ├── 📝 EDA_ANALYSIS.md: Theoretical steps for data inspection.
+│   │   │   └── 📄 EDA_PLOTS.ipynb: Practical playground for visualizations.
+│   │   ├── 📁 PREPROCESSING: Data cleaning, scaling, and transformation techniques
+│   │   └── 📁 SPLIT: Strategies for Train/Test/Validation and Data Leakage.
+│   ├── 📁 3. Models (The Core Mechanics)
+│   │   ├── 📁 ModelsGeral: Fundamental components of any algorithm.
+│   │   │   ├── 📝 Hyperparameters.md
+│   │   │   ├── 📝 LossFunction.md: Advanced study abot loss functions 
+│   │   │   ├── 📝 Metrics.md: Performance evaluation (R², RMSE, Accuracy).
+│   │   │   ├── 📝 Optimization.md: Solvers and engines (Gradient Descent).
+│   │   │   └── 📝 Parameters.md
+│   │   ├── 📁 Supervised
+│   │   │   ├── 📁 Regression: Advanced study about REGRESSION MODELS -> (Linear, Boosting, TreeBased and more)
+│   ├── 📁 4. Workflow
+│   │   └── 📝 Workflow_ML.md: Step-by-step professional project pipeline.
+│   └── 📁 exercises_book: Solutions and notes for Hands-On ML chapters.
+│
+├── 📁 src (Practical Implementation & Experiments)
+│   ├── 📁 datasets: Local data storage and Scikit-learn dataset loaders.
+│   └── 📁 projects: End-to-end ML projects (e.g., Housing Price Prediction).
 ````
 
 ---
