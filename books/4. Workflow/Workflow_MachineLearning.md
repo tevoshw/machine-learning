@@ -80,7 +80,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
 **THERE ARE DIFFERENTS PARTS FOR THE DATA IN A MACHINE LEARNING MODE, AND WE'LL GO EXPLORE ALL OF THESE STEPS RIGHT NOW**
-
+- Problems Addressed in /2. Data/SPLIT
 
 **WHY AND HOW STARING?**
 - Prepare the ambient and the data
@@ -96,7 +96,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 # 5. SELECT THE SYSTEMS FOR THE MODEL
 
 
-### 5.1 SYSTEM A    
+### 5.1 SYSTEM A  (SUPERVISED, UNSUPERVISED..)
 **GERAL QUESTIONS AND THINGS**
 - How the data? labeled or not
 - Do we need to transform the problem into another formulation? (classification → regression, multi-class → binary)
@@ -136,7 +136,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 
 
-#### 5.2 SYSTEM B
+#### 5.2 SYSTEM B (ONLINE vs OFFLINE...)
 
 **GERAL QUESTIONS**
 
@@ -157,7 +157,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 3. Suitable for data streams
 4. Handles concept drift better than batch learning
 
-### 5.3 SYSTEM C
+### 5.3 SYSTEM C (INSTANCIES vs MODULES)
 
 **INSTANCE-BASED LEARNING**
 - DEFINITION: type of Machine Learning where the model stores training instances and makes predictions by comparing new data points to similar stored examples.
@@ -176,23 +176,36 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 4. Requires a training phase
 
 
-### 5.4 SYSTEM D
-**THIS PART WAS DEFINIED IN #4**
+### 5.4 SYSTEM D (DATA SPLIT)
+**SPLIT**
+- Problems Addressed in /2. Data/SPLIT
 
-### 5.5 SYSTEM E 
+
+### 5.5 SYSTEM E (MODEL)
 **GERAL**
-- DEFINITION: Ever model have 6 characteristics that defined them.
-- CHARACTERISTICS:
-1. Representation: How the model transfrom the x in y (y = f(x) ), ever model choose a function different
-2. Parameters: The things that the model learn and stores
-3. Objective Function: A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more)
-4. Optimization method: How the model update the parameters (Gradient Descent, Adam, SGD)
-5. Decision or exit criterion: How the model choose the final input (model calculate a number and RETURN) (model calculate 70% to be a class, and now what he gonna do?)
-6. Hyperparameters: Control how the model learning (Complexity, regularization and more)
+- More details addressed in /3. Models/Models Geral
+- We need to define 4 characteristics in this system.
+1. Parameters: The things that the model learn and stores
+2. Objective Function: A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more)
+3. Optimization method: How the model update the parameters (Gradient Descent, Adam, SGD)
+4. Hyperparameters: Control how the model learning (Complexity, regularization and more)
 
 
+#### 5.6 SYSTEM F (METRICS)
+**GERAL**
+- We need to choose a metric function to verify the loss function in new data (metrics)
+- More details addressed in /3. Models/Models Geral
 
 # 6. TRAIN AND IMPROVE THE MODEL
+**GERAL**
+- Improve the model, with some reviews and adjusts
+1. Transform and update the hyperparameters
+2. Try others models, loss functions and optimization methods
+3. EDA part 2.
+- More details addressed in:
+1. /3. Models/Models Geral/HyperParameters
+2. Problems Addressed in /2. Data/EDA
+
 
 # 7. SHOW THE SOLUTION Share to the other people and the manager
 # 8. PUBLIC THE SYSTEM, ANALYZE AND ADJUST Publish to the internet, and see how goes work with new instancies

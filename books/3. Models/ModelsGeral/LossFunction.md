@@ -85,4 +85,4 @@
     1.  SKLearn Model: ElasticNet()
 
 
-# ERROR CLASSIFICATION
+# REGULARIZATION REGRESSION
