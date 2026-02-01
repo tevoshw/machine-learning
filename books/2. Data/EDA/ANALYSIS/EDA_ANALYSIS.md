@@ -69,6 +69,20 @@
 2. Can be VALID (weather, profit, variaton and more) or INVALID (error)
 - EXAMPLE: Weather = -48 (valid) // Age = -39 (invalid)
 
+**CENSORING**
+# DATA CENSORING (ML PERSPECTIVE)
+- DEFINITION: When the value of a measurement or observation is restricted at a certain threshold, masking the true underlying value.
+- CHARACTERISTICS:
+1. The "Ceiling" Effect: Data points accumulate in a straight line at the maximum or minimum limit (as seen in your Regplot at 500k).
+2. Loss of Information You know the value is "at least X", but not its exact magnitude.
+3. Model Bias: Standard algorithms (like OLS) get "confused" by the flat line and underestimate the true slope of the trend.
+- TYPES:
+1. Right-Censoring: The limit is at the top. (Ex: Surveys where the highest option is "Income > $100k").
+2. Left-Censoring: The limit is at the bottom. (Ex: A chemical test that cannot detect substances below 0.01mg).
+- EXAMPLES:
+1. Housing: Prices capped at $500,000 for privacy or system limits (VALID but restricted).
+2. Visual: A horizontal "wall" of dots at the edge of a Scatter Plot.
+
 ## DISTRIBUTION OF THE DATA
 
 **SKEWED DATA**

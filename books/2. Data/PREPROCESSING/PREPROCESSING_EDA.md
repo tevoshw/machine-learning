@@ -28,11 +28,15 @@
 - TREAT: Check if data makes sense, if makes ok, doesnt change, but not we need to remove or transform
 - REMOVE: .drop(columns = [])
 
+**ENSORING TREATMENT**
+- TREAT: Remove or fililtering, so you can remove the "capped" values if they represent a small portion of the data to avoid biasing the trend.
+- FLAGGING: Create a new binary feature `is_censored` (1 for limit values, 0 for others) to help the model distinguish the "wall".
+- TOBIT MODEL: Use specific regression models designed to handle censored variables.
+
+
 ## TYPE OF THE DATA TREAT
 
 ### CATEGORIAL
-
-
 **CATEGORIAL FEATURES**
 - TREAT: Verify the cardinality and null values, if are to high we remove, altough if we don't have that, we have to put it into numeric values.
 - REMOVE: df.drop(columns = []) // + .value_counts()
