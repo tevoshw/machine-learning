@@ -49,7 +49,7 @@
     3. Fully differentiable, suitable for Gradient Descent.
 - **WHEN TO USE**: You have some outliers, but you don't want to go as extreme as MAE. It's the "balanced" middle ground.
 - **HANDS-OK-**:
-    1.  SKLearn Model: HuberRegression()
+    1.  SKLearn Model: HuberRegressor()
 
 ## LASSO REGRESSION (L1 Regularization)
 - **LOSS FUNCTION** Loss = Error (MSE) + Regularization (L1)
