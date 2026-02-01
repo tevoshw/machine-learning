@@ -5,7 +5,7 @@
 
 - **The Equation**: $Y = w_1x_1 + w_2x_2 + \dots + w_nx_n + b$
 - **Behavior**: It represents an increasing or decreasing relationship. While the fundamental relationship is linear, feature engineering can sometimes introduce curves (polynomials).
-- **Types**: Linear, Quantile, Huber, Ridge, Lasso and Elastic Net
+- **Types**: Linear, Quantile, Huber, Ridge, Lasso, ElasticNet, Tobit and more.
 
 ---
 
@@ -37,6 +37,8 @@
 * **MSE**: Penalizes big mistakes (sensitive to outliers).
 * **MAE**: Penalizes all errors equally (robust to outliers).
 * **HUBER**: The best of both worlds (MSE for small errors, MAE for large ones).
+* **TOBIT**: For censored data
+
 
 ### 🔹 Penalty-Based (Regularization)
 * **Loss** = error + regularization
@@ -45,6 +47,15 @@
 * **ELASTIC NET**: A hybrid of L1 and L2 for complex datasets.
 
 ## 5. OPTIMIZATION ALGORITHMS
+**Techniques and methods used for adjust the parameters values from a model**
+
+### Methods based on gradients
+* **GRADIENT DESCENT**: 
+* **BATCH GRADIENT DESCENT**:
+* **STOCHASTIC GRADIENT DESCENT**:
+* **MINI-BATCH GRADIENT DESCENT**:
+
+###
 
 ## 6. HYPERPARAMETERS
 
