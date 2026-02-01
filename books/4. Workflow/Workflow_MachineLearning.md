@@ -184,17 +184,14 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 ### 5.5 SYSTEM E (MODEL)
 **GERAL**
 - More details addressed in /3. Models/Models Geral
-- We need to define 4 characteristics in this system.
+- We need to define 5 characteristics in this system.
 1. Parameters: The things that the model learn and stores
-2. Objective Function: A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more)
+2. Objective Function/Loss Function: A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more)
 3. Optimization method: How the model update the parameters (Gradient Descent, Adam, SGD)
-4. Hyperparameters: Control how the model learning (Complexity, regularization and more)
+4. Hyperparameters: Control how the model learning (Complexity, regularization and more)5
+5. Metrics: A function the calcule the measure to test set
 
 
-#### 5.6 SYSTEM F (METRICS)
-**GERAL**
-- We need to choose a metric function to verify the loss function in new data (metrics)
-- More details addressed in /3. Models/Models Geral
 
 # 6. TRAIN AND IMPROVE THE MODEL
 **GERAL**
