@@ -30,6 +30,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 **Define the systems of the machine learning project**
 - A (supervised or other)
+- A.1 (Classification or regression if A = Supervized)
 - B (batch or offline)
 - C (instances or modules)
 - D (dataset split: holdout, crossvalidation, kfold, stratified and etc)
