@@ -1,15 +1,56 @@
+First thing we need to understanding it's, how a model learn? Through math.
+- 1. When we define a model (like LinearRegression) a math function are defined inside the model
+- 2. The model get the splited daya X_TRAIN (with the features) and y_train (with the label)
+- 3. The model analysis the features numbers (target) and do predictions (y')
+HOW A MODEL DO THESE PREDICTIONS?
+- Every math functions have parameters (learn more in https://mathinsight.org/definition/parameter), and the model inicialize these parameters with random numbers, we can say that the model do predictions the number for the parameters
+- The number of parameters it's proportional to the n_features, so 15 features == 15 parameters, and the model tries to predict all theses parameters
+- So with these random numbers for parameters and the features targets, a complete math function are created, and consequently a result the (y')
+- But the model doesn't know if the predictions for the parameters are correct, then a model need other math function to verify that accuracy of parameters numbers, and we call that function **LOSS FUNCTION**, a function that calcule the error of model predictions
+- Error in machine learning it's how the model will compare the y' with the y, **Error = L(y', y)**, so doesn't have a fixed math to calculate that, always depends the objective of the model
+
+
 # LOSS FUNCTION
 **DEFINITION**
-- An internal model calculation that measures prediction error, we can choose the better for the model.
-- It is the criterion the model uses to evaluate how wrong or right its predictions are.
-- Based on this value, the optimization algorithm updates the parameters (coefficients and bias).
-- It measures how far the prediction (ŷ) is from the true value (y) on the training data.
+- A math function inside the model, that measure how far the y' (parameters prediction) is from the y (parameter number)
+- There are a many types of loss functions, in other words, a many math functions to calculate the loss, but why? we'll see soon in this page (before you read following content, try to think a little and find the answer)
+
+**HOW THIS WORK?**
+- The model tries to predict all the parameters numbers, with others math functions that we'll see later, so the loss function determine if the model are going in a good way or not with the predictions, with a number that we call error
+- Every situation have a different type of error that matters more:
+
+```
+Example: Delivering pizza late
+
+Error: 2 minutes → no problem
+Error: 30 minutes → angry customer
+
+- So in this case a big error (30) will important more than a small (2), and we need to 'alert' this for the model, so we'll use a loss function that penalizes big mistakes, and we'll this math function
+- Error = L(y', y) ** 2, so will become [4, 900], and the model will know that error like 30 it's a big mistake
+
+```
+
+- But let's think about, the data have y extremes values (outliers), so the model will try to adjust the paraneters for these outliers, and if will use the same thinking in the last example, the real data will be penalized trying to get a low error for the outliers, and the parameters goes to be a total disaster. So in this case we need to use other loss function, that doesn't penalized.
+
+
+```
+Example: Delivering pizza late
+
+Error: 2 minutes → no problem
+Error: 30 minutes → angry customer
+
+- So in this case a the errors nedd to become the lowest (for the model doesn't adjust for outliers), so we don't change them
+- Error = L(y', y) , so will become [2, 30], and the model doesn't will penalized so far big mistakes, and it won't adjust as well to outliers
+
+```
+
 
 **REGULARIZATIONN**
 - Regularization is an additional (extra) term added to the loss function. (LOSS = Error + Regularization)
 - It penalizes model complexity, usually large coefficients.
 - The goal is to reduce overfitting and improve generalization.
 - Common Regularization term: L1 (Lasso), L2 (Ridge), ElasticNet (L1 + L2)
+- HYPERPARAMETER:
 
 ## IMPORTANT NOTE !
 - Loss functions are used during training to guide parameter updates.
@@ -107,4 +148,3 @@
     2. Can be extended with L1 (Lasso Tobit) or L2 (Ridge Tobit) penalties
 
 
-# ERROR CLASSIFICATION
