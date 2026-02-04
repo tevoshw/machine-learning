@@ -30,6 +30,7 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 **Define the systems of the machine learning project**
 - A (supervised or other)
+- A.1 (Classification or regression if A = Supervized)
 - B (batch or offline)
 - C (instances or modules)
 - D (dataset split: holdout, crossvalidation, kfold, stratified and etc)
@@ -55,27 +56,6 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 **GERAL**
 - After find in the data things that can harm or improve, we need to change that, here in the preprocessing that happened, here the data are transform for use in the model
-
---------------------PLOTS NECESSARYS TO EXPLORE THE DATA (BONUS)---------------------
-- JOINTPLOT
-- STRIPLOT/SWARMPLOT
-- RIDGELINEPLOT
-- HEXBIN PLOT
-- BOXPLOT GROUPED
-- CDF/ ECDF PLOT
-- HEATMAP DE MISSING VALUES
-- AUTOCORRELATION PLOT
-- RADAR, PARALLEL, PCA SCATTER, CLUSTERMAP
-
---------------------------------- PART 2 ----------------------------
-- Correlation → heatmap, pairplot, jointplot, hexbin
-- Distribution → hist, kde, ecdf, ridgeline
-- Categorical → countplot, stripplot, box grouped
-- Outliers → box, violin, scatter, hexbin
-- Time → line, rolling mean, autocorrelation
-- Missing → missing heatmap
-
-----------------------------------------.---------------------------------------------------
 
 
 # 4. PREPARE THE DATA FOR THE ML ALGORITHMNS (Separate the data, in test, train, validation and more)
