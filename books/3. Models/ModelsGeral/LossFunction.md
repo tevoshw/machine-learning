@@ -1,7 +1,7 @@
 First thing we need to understanding it's, how a model learn? Through math.
-- 1. When we define a model (like LinearRegression) a math function are defined inside the model
-- 2. The model get the splited daya X_TRAIN (with the features) and y_train (with the label)
-- 3. The model analysis the features numbers (target) and do predictions (y')
+- When we define a model (like LinearRegression) a math function are defined inside the model
+- The model get the splited daya X_TRAIN (with the features) and y_train (with the label)
+- The model analysis the features numbers (target) and do predictions (y')
 HOW A MODEL DO THESE PREDICTIONS?
 - Every math functions have parameters (learn more in https://mathinsight.org/definition/parameter), and the model inicialize these parameters with random numbers, we can say that the model do predictions the number for the parameters
 - The number of parameters it's proportional to the n_features, so 15 features == 15 parameters, and the model tries to predict all theses parameters
