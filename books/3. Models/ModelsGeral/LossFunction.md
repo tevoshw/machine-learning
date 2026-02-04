@@ -36,8 +36,8 @@ Error: 30 minutes → angry customer
 ```
 Example: Delivering pizza late
 
-Error: 2 minutes → no problem
-Error: 30 minutes → angry customer
+Error: 2 minutes → Normal dayta
+Error: 30 minutes → OUTLIERS (INVALID DATA)
 
 - So in this case a the errors nedd to become the lowest (for the model doesn't adjust for outliers), so we don't change them
 - Error = L(y', y) , so will become [2, 30], and the model doesn't will penalized so far big mistakes, and it won't adjust as well to outliers
