@@ -44,107 +44,118 @@ Error: 30 minutes → angry customer
 
 ```
 
-
-**REGULARIZATIONN**
-- Regularization is an additional (extra) term added to the loss function. (LOSS = Error + Regularization)
-- It penalizes model complexity, usually large coefficients.
-- The goal is to reduce overfitting and improve generalization.
-- Common Regularization term: L1 (Lasso), L2 (Ridge), ElasticNet (L1 + L2)
-- HYPERPARAMETER:
-
 ## IMPORTANT NOTE !
 - Loss functions are used during training to guide parameter updates.
 - Evaluation metrics (RMSE, R², Accuracy) are computed after training on validation or test data.
 
-# REGRESSION
+# TYPES OF LOSS FUNCTIONS
 
 ## MSE (Mean Squared Error)
+- **MATH FUNCTION:** $$\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
+- **TYPE:** Regression problems
 - **LOSS FUNCTION** Loss = Error (MSE)
 - **DEFINITION**: Measures the average squared error between predicted and true values
-- **CHARACTERISTICS**:
-    1. Big mistakes are heavily penalized.
-    2. Very sensitive to outliers.
-    3. Differentiable → great for Gradient Descent.
 - **WHEN TO USE**: Your data is clean, and you want to punish big mistakes. It's the "standard" choice.
 - **HANDS-OK-**:
-    1.  SKLearn Model: LinearRegression()
+    1.  SKLearn Model: `LinearRegression()`
 
 ## MAE (Mean Absolute Error)
+**MATH FUNCTION:** $$\frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
+- **TYPE:** Regression problems
 - **LOSS FUNCTION** Loss = Error (MAE)
 - **DEFINITION**: Measures the average absolute error between predicted values and true values.
-- **CHARACTERISTICS**:
-    0. Regression Models.
-    1. All errors are penalized equally.
-    2. Less sensitive to outliers than MSE.
-    3. Not fully differentiable at zero (gradient is constant).
 - **WHEN TO USE**: You have "crazy" outliers (dirty data) and you don't want them to ruin your model's logic.
 - **HANDS-OK-**:
-    1.  SKLearn Model: QuantileRegression()
+    1.  SKLearn Model: `QuantileRegression()`
 
 ## HUBER LOSS
+**MATH FUNCTION:**
+$$
+L_{\delta}(y, \hat{y}) = 
+\begin{cases} 
+\frac{1}{2}(y - \hat{y})^2 & \text{for } |y - \hat{y}| \le \delta \\
+\delta(|y - \hat{y}| - \frac{1}{2}\delta) & \text{else}
+\end{cases}
+$$
+- **TYPE:** Regression problems
 - **LOSS FUNCTION** Loss = Error (HUBER)
 - **DEFINITION**: A loss function that combines MSE and MAE, behaving like MSE for small errors and MAE for large errors.
-- **CHARACTERISTICS**:
-    1. Quadratic for small errors → stable optimization.
-    2. Linear for large errors → robust to outliers.
-    3. Fully differentiable, suitable for Gradient Descent.
 - **WHEN TO USE**: You have some outliers, but you don't want to go as extreme as MAE. It's the "balanced" middle ground.
 - **HANDS-OK-**:
-    1.  SKLearn Model: HuberRegressor()
+    1.  SKLearn Model: `HuberRegressor()`
 
-## LASSO REGRESSION (L1 Regularization)
-- **LOSS FUNCTION** Loss = Error (MSE) + Regularization (L1)
-- **DEFINITION**: A linear model that adds a penalty term equal to the absolute value of the magnitude of coefficients to the loss function ($Loss = MSE + \alpha \sum |w_j|$).
-- **CHARACTERISTICS**:
-    1. **Sparsity**: It can force the coefficients of unimportant features to be exactly zero
-    2. **Feature Selection**: Acts as an automated feature selection tool by effectively removing irrelevant variables.
-    3. **Geometric Nature**: Due to the diamond-shaped constraint, it tends to hit the axes, resulting in zero weights.
-- **WHEN TO USE**: You have a "messy" dataset with too many columns (50+) and you want the model to discard the useless ones for you.
-- **HANDS-OK-**:
-    1.  SKLearn Model: Lasso()
-- **REGULARIZATION**:
-1. Reset the coeficients
 
-## RIDGE REGRESSION (L2 Regularization)
-- **LOSS FUNCTION** Loss = Error (MSE) + Regularization  (L2)
-- **DEFINITION**: A linear model that adds a penalty term equal to the square of the magnitude of coefficients to the loss function ($Loss = MSE + \alpha \sum w_j^2$).
-- **CHARACTERISTICS**:
-    1. **Weight Shrinkage**: It shrinks coefficients towards zero, but they never reach exactly zero.
-    2. **Multicollinearity Handling**: Excellent for datasets where input variables are highly correlated; it distributes the weight among them.
-    3. **Non-Sparse Solution**: Keeps all features in the model, making it less ideal for feature selection but great for retaining information.
-- **WHEN TO USE**: You have too many features (50+) and they are all "fighting" for importance (correlation). Use this to stabilize the model.
-- **HANDS-OK-**:
-    1.  SKLearn Model: Ridge()
-- **REGULARIZATION**:
-1. Shrinks the coeficients (but dont reset)
+Now that we understanding how models kmow if they're doing good or bad predictions for parameter, and know the good of bad way, other problemns appears.
+1. The model tries to arrive in a 0 from error, in other words, the model tries to minimize as much as possible the loss function, from 10 to 5, from 5 to 1, from 1 to 0
+2. To do that, the model starts to capture the all the data and noise values, adjusting the parameters for the outliers and invalid values too
+3. To minimize the loss function, the model can do anything, like starts to jump for have a big numbers for the parameters like, from 1.5 from 1500 (cuz of outliers and more)
+4. If you train too much, the model will start 'memoryzing' the data, and not learning, like u just need a simples linear regression, and you you use a complex model (such as a 10th-degree polynomial), the model will create curves in a line model
+5. If the model has a little dataset, the model will learning these values, not learning, and others problems, so we need to do something.
+How we can treat that?
+- We can add more terms in the loss function, that we these 'extras' terms of **REGULARIZATION**, like $$LF = Error + Regularization$$ 
+- The regression part of loss function are to avoid overfitting, lot of features and others problems mentioned.
 
-## ELASTIC NET REGRESSION
-- **LOSS FUNCTION** Loss = Error (MSE) + Regularization (L1 + L2)
-- **DEFINITION**: A regularization technique that combines both L1 (Lasso) and L2 (Ridge) penalties into a single loss function.
-- **CHARACTERISTICS**:
-    1. **Balanced Penalty**: Uses a convex combination of L1 and L2 (controlled by a ratio parameter).
-    2. **Group Effect**: Unlike Lasso, which might pick one variable at random from a group of correlated features, Elastic Net tends to include the whole group.
-    3. **Flexibility**: It overcomes the limitations of Lasso when the number of predictors ($n$) is much larger than the number of observations ($m$).
-- **WHEN TO USE**: You are in doubt or have groups of correlated variables. It's the "safe bet" when you don't know if you need L1 or L2.
-- **HANDS-OK-**:
-    1.  SKLearn Model: ElasticNet()
-- **REGULARIZATION**:
-1. Reset some coeficients, and shrinks others
+# REGULARIZATION
+**DEFINITION**
+- "EXTRA TERMS" for the loss functions, that helps the model to avoid overfitting and high parameters numbers.
+- Like error math, there are a lot of differents types of regularization terms
+- The models that have these extra terms, are renamed, but them still do the samme work (so you can identify if the model has regularization terms, just looking at the models name)
 
-## TOBIT MODEL (CENSORED REGRESSION)
 
-- **LOSS FUNCTION** LOss = Negative Log-Likelihood (Censored Gaussian)
-- **DEFINITION**: A regression model designed for situations where the dependent variable is censored, meaning that values below or above a certain threshold are not fully observed.
-- **CHARACTERISTICS**:
-    1. **Latent Variable**: Assumes an unobserved continuous variable \( y^* = X\beta + \varepsilon \), with \( \varepsilon \sim \mathcal{N}(0, \sigma^2) \).
-    2. **Censoring Mechanism**: The observed variable \( y \) is censored at a known limit (e.g., \( y = 0 \) if \( y^* \le 0 \)).
-    3. **Likelihood-Based Estimation**: Combines probability density (PDF) for uncensored observations and cumulative distribution (CDF) for censored ones.
-- **WHEN TO USE**: When the dependent variable has a natural censoring point (e.g., income ≥ 0, expenditures with many zeros, detection limits).
+WITHOUT REGULARIZATION:
+
+```
+L = 100
+
+- So in this case the error it's 10, but how we're using the MSE turn to 100
+```
+
+WITH REGULARIZATION
+```
+L = 100 + (2 . (100) )
+L = 300
+
+- So in this case the error i'ts the same, and we're using a regularization, so the loss function increase, and the model will alert for that choose of parameters i'ts bad, avoid overfitting
+```
+
+**ALPHA ($\alpha $)**
+- Like we said, there are many differents types of terms in the regularization part, but one it's fixed, and we call that alpha
+- It's a hyperparameter that multiply the penalty part and then sum with the error, like:   $$ alpha . (Penalty) $$
+- How it's a hyperparameter, we can define that before the train, but for standard the value are 1
+
+# TYPES OF PENALTY
+
+> [!IMPORTANT]
+> All of these models, are a know models (liner regression and more), THE ONLY THING THAT CHANGED it's tHE LOSS FUNCTIONS, that add EXTRA TERMS (REGULARIZATION), and CONSEQUENTELY CHANGED THE NAME ( idk why, just accept too :/ ), BUT INSIDE IT'S A KNOW MODEL, THE SAME OBJECTIVE AND MORE.
+
+## LASSO REGULARIZATION (L1)
+**PENALTY FUNCTION:**
+$$P = \sum_{j=1}^{n} |w_j|$$
+- **TYPE:** Regression (Sparsity / Feature Selection)
+- **LOSS FUNCTION:** $Loss = Error + Regularization$
+- **DEFINITION**: Adds the "absolute magnitude" of coefficients as a penalty term. Unlike L2, the pressure to decrease the weight remains constant regardless of the weight's size.
+- **BEHAVIOR**: It can force the coefficients of irrelevant features to be **exactly zero**. This results in a "sparse" model where only the most important features remain.
+- **WHEN TO USE**: When you have a high number of features and you suspect that many of them are irrelevant or redundant (noise).
 - **HANDS-ON**:
-    1. Statsmodels: Tobit (via custom MLE)
-    2. Other libraries: lifelines, PyTorch (custom likelihood)
-- **REGULARIZATION**:
-    1. Not inherent to the model
-    2. Can be extended with L1 (Lasso Tobit) or L2 (Ridge Tobit) penalties
+    1. SKLearn Model: `Lasso(alpha=1.0)`
 
+## RIDGE REGULARIZATION (L2)
+**PENALTY FUNCTION:**
+$$P = \sum_{j=1}^{n} w_j^2$$
+- **TYPE:** Regression (Weight Decay)
+- **LOSS FUNCTION:** $Loss = Error + Regularization$
+- **DEFINITION**: Adds the "squared magnitude" of coefficients as a penalty term to the loss function. Because it squares the weights, large coefficients are penalized much more heavily than small ones.
+- **BEHAVIOR**: It shrinks the parameters asymptotically toward zero. The weights become very small (e.g., 0.00001) but **never reach absolute zero**. All features are kept in the model.
+- **WHEN TO USE**: When you have many features with small/medium effects and you want to prevent any single one from exploding (handles Multicollinearity well).
+- **HANDS-ON**:
+    1. SKLearn Model: `Ridge(alpha=1.0)`
 
+## ELASTIC NET (L1 + L2)
+**PENALTY FUNCTION:**
+$$P = \rho \sum |w| + \frac{\alpha(1-\rho)}{2} \sum w^2$$
+- **TYPE:** Hybrid Regression
+- **LOSS FUNCTION:** $Loss = Error + Regularization$
+- **DEFINITION**: A combination of both L1 and L2 regularization. It uses a second hyperparameter ($\rho$ or `l1_ratio`) to control the mix between the two.
+- **WHEN TO USE**: It is the "best of both worlds." Use it when there are multiple features that are correlated with each other; Lasso might pick one at random, while Elastic Net will likely keep both (Ridge effect) while still removing dead weight (Lasso effect).
+- **HANDS-ON**:
+    1. SKLearn Model: `ElasticNet(alpha=1.0, l1_ratio=0.5)`
