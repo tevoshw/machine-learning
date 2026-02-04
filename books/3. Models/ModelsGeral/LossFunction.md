@@ -2,6 +2,7 @@ First thing we need to understanding it's, how a model learn? Through math.
 - When we define a model (like LinearRegression) a math function are defined inside the model
 - The model get the splited daya X_TRAIN (with the features) and y_train (with the label)
 - The model analysis the features numbers (target) and do predictions (y')
+
 HOW A MODEL DO THESE PREDICTIONS?
 - Every math functions have parameters (learn more in https://mathinsight.org/definition/parameter), and the model inicialize these parameters with random numbers, we can say that the model do predictions the number for the parameters
 - The number of parameters it's proportional to the n_features, so 15 features == 15 parameters, and the model tries to predict all theses parameters
@@ -85,6 +86,7 @@ Now that we understanding how models kmow if they're doing good or bad predictio
 3. To minimize the loss function, the model can do anything, like starts to jump for have a big numbers for the parameters like, from 1.5 from 1500 (cuz of outliers and more)
 4. If you train too much, the model will start 'memoryzing' the data, and not learning, like u just need a simples linear regression, and you you use a complex model (such as a 10th-degree polynomial), the model will create curves in a line model
 5. If the model has a little dataset, the model will learning these values, not learning, and others problems, so we need to do something.
+
 How we can treat that?
 - We can add more terms in the loss function, that we these 'extras' terms of **REGULARIZATION**, like $$LF = Error + Regularization$$ 
 - The regression part of loss function are to avoid overfitting, lot of features and others problems mentioned.
