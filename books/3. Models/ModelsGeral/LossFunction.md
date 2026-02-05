@@ -71,7 +71,15 @@ Error: 30 minutes → OUTLIERS (INVALID DATA)
 
 ## HUBER LOSS
 **MATH FUNCTION:**
-$$ {\delta}(y, \hat{y}) = \begin{cases} \frac{1}{2}(y - \hat{y})^2 & \text{for } |y - \hat{y}| \le \delta \\\delta(|y - \hat{y}| - \frac{1}{2}\delta) & \text{else}\end{cases} $$
+
+$$
+\ell_\delta(y, \hat{y}) =
+\begin{cases}
+\dfrac{1}{2}(y - \hat{y})^2, & |y - \hat{y}| \le \delta \\
+\delta(|y - \hat{y}| - \dfrac{1}{2}\delta), & \text{otherwise}
+\end{cases}
+$$
+
 - **TYPE:** Regression problems
 - **LOSS FUNCTION** Loss = Error (HUBER)
 - **DEFINITION**: A loss function that combines MSE and MAE, behaving like MSE for small errors and MAE for large errors.
