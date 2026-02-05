@@ -163,3 +163,24 @@ $$P = \rho \sum |w| + \frac{\alpha(1-\rho)}{2} \sum w^2$$
 - **WHEN TO USE**: It is the "best of both worlds." Use it when there are multiple features that are correlated with each other; Lasso might pick one at random, while Elastic Net will likely keep both (Ridge effect) while still removing dead weight (Lasso effect).
 - **HANDS-ON**:
     1. SKLearn Model: `ElasticNet(alpha=1.0, l1_ratio=0.5)`
+
+
+
+
+
+# QUESTIONS
+
+These are some questions to see if you understand or just read/memoryzing.
+
+
+1. What is it loss function?
+2. What is it the difference between loss functions and metrics function?
+3. Why accuracy it's used like a loss function?
+4. What is it regularizatiom, and for why it's used?
+5. What's the difference between L1 and L2 regularization?
+6. What it's overfitting?
+7. Why can increasing regularization too much cause underfitting?   
+8. How MAE it's more robust than MSE for outliers
+9. Why HUBER LOSS it's better for long tail dataset?
+10. Whats happend when we put regularization the loss total?
+11. How does adding regularization to the loss function affect the bias and variance of the model?
