@@ -15,8 +15,10 @@ HOW A MODEL DO THESE PREDICTIONS?
 **DEFINITION**
 - A math function inside the model, that measure how far the y' (parameters prediction) is from the y (parameter number)
 - There are a many types of loss functions, in other words, a many math functions to calculate the loss, but why? we'll see soon in this page (before you read following content, try to think a little and find the answer)
+- Loss functions are used during training to guide parameter updates.
+- Evaluation metrics (RMSE, R², Accuracy) are computed after training on validation or test data.
 
-**HOW THIS WORK?**
+**HOW THIS WORK REGRESSION?**
 - The model tries to predict all the parameters numbers, with others math functions that we'll see later, so the loss function determine if the model are going in a good way or not with the predictions, with a number that we call error
 - Every situation have a different type of error that matters more:
 
@@ -44,14 +46,33 @@ Error: 30 minutes → OUTLIERS (INVALID DATA)
 - Error = L(y', y) , so will become [2, 30], and the model doesn't will penalized so far big mistakes, and it won't adjust as well to outliers
 
 ```
+**HOW THIS WORK CLASSIFICATION?**
+- In classification, the model does not predict a continuous value, it predicts a **probability** of a class.
+- The loss function measures how far the predicted probability (\hat{y}) is from the true label (y).
+- Every situation have a different type of error that matters more:
 
-## IMPORTANT NOTE !
-- Loss functions are used during training to guide parameter updates.
-- Evaluation metrics (RMSE, R², Accuracy) are computed after training on validation or test data.
+```
+Example: Email Spam Classification
 
-# TYPES OF LOSS FUNCTIONS
+y = 1 → Spam
+ŷ = 0.99 → Very confident spam
+ŷ = 0.51 → Low confidence spam
 
-## MSE (Mean Squared Error)
+
+- In both cases the model predicts the correct class, but the **confidence is very different**
+- We want the model to be penalized more when it is **confident and wrong**, and less when it is unsure
+- So we use a loss function that punishes **wrong confident predictions**, and this loss function is based on logarithms
+
+```
+
+
+> **EXCEPTION**:
+>In TREE-BASED, KNN and RANDOM FOREST the algorithm and thinking change, so this page doesn't representate well these models.
+
+
+## TYPES OF LOSS FUNCTIONS
+
+### MSE (Mean Squared Error)
 - **MATH FUNCTION:** $$\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 - **TYPE:** Regression problems
 - **LOSS FUNCTION** Loss = Error (MSE)
@@ -60,7 +81,7 @@ Error: 30 minutes → OUTLIERS (INVALID DATA)
 - **HANDS-OK-**:
     1.  SKLearn Model: `LinearRegression()`
 
-## MAE (Mean Absolute Error)
+### MAE (Mean Absolute Error)
 **MATH FUNCTION:** $$\frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
 - **TYPE:** Regression problems
 - **LOSS FUNCTION** Loss = Error (MAE)
@@ -69,7 +90,7 @@ Error: 30 minutes → OUTLIERS (INVALID DATA)
 - **HANDS-OK-**:
     1.  SKLearn Model: `QuantileRegression()`
 
-## HUBER LOSS
+### HUBER LOSS
 **MATH FUNCTION:**
 
 $$
@@ -88,6 +109,11 @@ $$
     1.  SKLearn Model: `HuberRegressor()`
 
 
+
+
+
+---
+
 Now that we understanding how models kmow if they're doing good or bad predictions for parameter, and know the good of bad way, other problemns appears.
 1. The model tries to arrive in a 0 from error, in other words, the model tries to minimize as much as possible the loss function, from 10 to 5, from 5 to 1, from 1 to 0
 2. To do that, the model starts to capture the all the data and noise values, adjusting the parameters for the outliers and invalid values too
@@ -96,8 +122,9 @@ Now that we understanding how models kmow if they're doing good or bad predictio
 5. If the model has a little dataset, the model will learning these values, not learning, and others problems, so we need to do something.
 
 How we can treat that?
-- We can add more terms in the loss function, that we these 'extras' terms of **REGULARIZATION**, like $$LF = Error + Regularization$$ 
-- The regression part of loss function are to avoid overfitting, lot of features and others problems mentioned.
+- We can add more terms in the loss function, that we these 'extras' terms of **REGULARIZATION**, like $$LF = Error + Regularization $$  
+- The regression part of loss function are to avoid overfitting, lot of features and others problems mentioned
+> This formula it's normally for every model, except for TREE-BASED, KNN and RANDOM FOREST!
 
 # REGULARIZATION
 **DEFINITION**
@@ -121,18 +148,19 @@ L = 300
 
 - So in this case the error i'ts the same, and we're using a regularization, so the loss function increase, and the model will alert for that choose of parameters i'ts bad, avoid overfitting
 ```
+## REGULARIZATTION HYPERPARAMETERS
 
 **ALPHA ($\alpha $)**
-- Like we said, there are many differents types of terms in the regularization part, but one it's fixed, and we call that alpha
-- It's a hyperparameter that multiply the penalty part and then sum with the error, like:   $$ alpha . (Penalty) $$
-- How it's a hyperparameter, we can define that before the train, but for standard the value are 1
+- DEFINITION: It's a hyperparameter that multiply the penalty part and then sum with the error, like:   $$ alpha . (Penalty) $$
+- Just for linear models
 
-# TYPES OF PENALTY
+
+## TYPES OF PENALTY
 
 > [!IMPORTANT]
 > All of these models, are a know models (liner regression and more), THE ONLY THING THAT CHANGED it's tHE LOSS FUNCTIONS, that add EXTRA TERMS (REGULARIZATION), and CONSEQUENTELY CHANGED THE NAME ( idk why, just accept too :/ ), BUT INSIDE IT'S A KNOW MODEL, THE SAME OBJECTIVE AND MORE.
 
-## LASSO REGULARIZATION (L1)
+### LASSO REGULARIZATION (L1)
 **PENALTY FUNCTION:**
 $$P = \sum_{j=1}^{n} |w_j|$$
 - **TYPE:** Regression (Sparsity / Feature Selection)
@@ -143,7 +171,7 @@ $$P = \sum_{j=1}^{n} |w_j|$$
 - **HANDS-ON**:
     1. SKLearn Model: `Lasso(alpha=1.0)`
 
-## RIDGE REGULARIZATION (L2)
+### RIDGE REGULARIZATION (L2)
 **PENALTY FUNCTION:**
 $$P = \sum_{j=1}^{n} w_j^2$$
 - **TYPE:** Regression (Weight Decay)
@@ -154,7 +182,7 @@ $$P = \sum_{j=1}^{n} w_j^2$$
 - **HANDS-ON**:
     1. SKLearn Model: `Ridge(alpha=1.0)`
 
-## ELASTIC NET (L1 + L2)
+### ELASTIC NET (L1 + L2)
 **PENALTY FUNCTION:**
 $$P = \rho \sum |w| + \frac{\alpha(1-\rho)}{2} \sum w^2$$
 - **TYPE:** Hybrid Regression
