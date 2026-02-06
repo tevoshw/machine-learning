@@ -70,7 +70,6 @@
 - EXAMPLE: Weather = -48 (valid) // Age = -39 (invalid)
 
 **CENSORING**
-# DATA CENSORING (ML PERSPECTIVE)
 - DEFINITION: When the value of a measurement or observation is restricted at a certain threshold, masking the true underlying value.
 - CHARACTERISTICS:
 1. The "Ceiling" Effect: Data points accumulate in a straight line at the maximum or minimum limit (as seen in your Regplot at 500k).
@@ -126,6 +125,7 @@ VISUALIZE:
 
 **SCALE AWARENESS**
 - DEFINITION: The difference between the valeus of the features, e the impact about this data in the model.
+- When Use?: Max/Min >= 10
 -  CHARACTERISTICS: 
 1. Without a scaling, a model can think that big numbers are more imporants them small numbers
 2. Harm models based in median or gradient (linear regression, nn and more)
