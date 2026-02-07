@@ -4,6 +4,7 @@
 
 **CONSTANT FEATURE**
 - TREAT: REMOVE
+- VISUALIZE: .nunique()
 - REMOVE: .drop(columns = [])
 
 **REDUNDANT FEATURE**
@@ -26,10 +27,12 @@
 
 **NEGATIVE DATA**
 - TREAT: Check if data makes sense, if makes ok, doesnt change, but not we need to remove or transform
+- VISUALIZE: (dataset < 0).sum().sum()
 - REMOVE: .drop(columns = [])
 
-**ENSORING TREATMENT**
+**CENSORING TREATMENT**
 - TREAT: Remove or fililtering, so you can remove the "capped" values if they represent a small portion of the data to avoid biasing the trend.
+- VISUALIZE: Histogram about (y)
 - FLAGGING: Create a new binary feature `is_censored` (1 for limit values, 0 for others) to help the model distinguish the "wall".
 - TOBIT MODEL: Use specific regression models designed to handle censored variables.
 
