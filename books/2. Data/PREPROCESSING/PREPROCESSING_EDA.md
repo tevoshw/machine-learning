@@ -73,6 +73,7 @@
 **SKEWED DATA**
 - TREAT: Check the asymmetric, if have, right or left, and then remove these data (extreme values) or drop rows with unrealistic outliers
 - SKEWED: .skew() (if skew > 1 (right and treat) or if skew < -1 (left and treat))
+- TREAT: np.lop1p (to transform) // np.expm1 (to back original values)
 - REMOVE: .drop(columns = [])
 
 **OUTLIERS**
