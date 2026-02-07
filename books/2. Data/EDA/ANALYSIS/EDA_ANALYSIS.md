@@ -11,8 +11,6 @@
 **SHAPE**
 - .SHAPE
 
-
-
 ## STRUCTURE AND QUALITY OF THE FEATURES
 **CONSTANT FEATURE**
 - DEFINITON: Are features that have all the same value for all the samples, they don't have a variability, so don't have a value to predict
@@ -34,27 +32,7 @@
 - CHARACTERISTICS: Some numeric features have a high cardinality, and this don't harm the model, so it's more for categorial.
 - EXAMPLE: FEATURE X: LION, CAT, DOG, WHALE, ANT, BUG (AND MORE 100 EXAMPLES), all presents in one single feature 
 
-## TYPE OF THE DATA
-
-**CATEGORIAL FEATURES**
-- DEFINITION: Features that represents classes or objects and not numerics continuous, the model can't learning without numeric values, so it's necessary analyses that
-- CHARACTERISTICS: 
-1. Can be string, object or category;
-2. They can be very important or useless;
-3. Nominal (no order of importance), Ordinal (with order of importance) or Label (create a numeric order that doesnt exist, and we use for the Y feature)
-- EXAMPLE: Country: BR, US, GER (nominal feature) // Position: Boss, employeer, trainee (ordinal feature)
-
-**TIME FEATURES**
-- DEFINITION: Features that represents time or dates 
-- CHARACTERISTICS:
-1. Can be object, datetime or int datatype
-2. Frequency (daily, monthly or annual)
-- EXAMPLE: (01/01/2026 2024-08-15 14:32:10 timestamp) 
-1. If we put these datas like int, can be 20200101 and 20201231, and a model can think that 20200101 < 20201231
-
 ## MISSING & INVALID DATA
-
-
 **NULL VALUES**
 - DEFINITION: Are missing values in the dataset.
 - CHARACTERISTICS: The null valeus isn't a 0, or '' string, just doens't exist like a ghost value
@@ -82,8 +60,24 @@
 1. Housing: Prices capped at $500,000 for privacy or system limits (VALID but restricted).
 2. Visual: A horizontal "wall" of dots at the edge of a Scatter Plot.
 
-## DISTRIBUTION OF THE DATA
+## TYPE OF THE DATA
+**CATEGORIAL FEATURES**
+- DEFINITION: Features that represents classes or objects and not numerics continuous, the model can't learning without numeric values, so it's necessary analyses that
+- CHARACTERISTICS: 
+1. Can be string, object or category;
+2. They can be very important or useless;
+3. Nominal (no order of importance), Ordinal (with order of importance) or Label (create a numeric order that doesnt exist, and we use for the Y feature)
+- EXAMPLE: Country: BR, US, GER (nominal feature) // Position: Boss, employeer, trainee (ordinal feature)
 
+**TIME FEATURES**
+- DEFINITION: Features that represents time or dates 
+- CHARACTERISTICS:
+1. Can be object, datetime or int datatype
+2. Frequency (daily, monthly or annual)
+- EXAMPLE: (01/01/2026 2024-08-15 14:32:10 timestamp) 
+1. If we put these datas like int, can be 20200101 and 20201231, and a model can think that 20200101 < 20201231
+
+## DISTRIBUTION OF THE DATA
 **SKEWED DATA**
 - DEFINITION: Occurs when data distribution it's not symmetrical, pull to one side (right-skewed or left-skewed)
 - CHARACTERISTICS: It's not an error, but can harm the model
@@ -103,7 +97,6 @@ VISUALIZE:
 
 
 ## RELATION BETWEEN FEATURES
-
 **HIGH CORRELATION**
 - DEFINITION: Features with a correlation in the data between them (if one increases, the other also increases.) 
 - CHARACTERISTICS: 
@@ -122,7 +115,6 @@ VISUALIZE:
 3. Can reveal non-linear relationships
 
 ## MODEL SENSITIVITY
-
 **SCALE AWARENESS**
 - DEFINITION: The difference between the valeus of the features, e the impact about this data in the model.
 - When Use?: Max/Min >= 10
@@ -139,14 +131,12 @@ VISUALIZE:
 - EXAMPLE: 90% of the targets are 'spam' and 10% are 'not spam' 
 
 ## FEATURE ENGINEERING
-
 **FEATURE ENGINEERING**
 - DEFINITION: The process of select, transform and create new feature (unreal), based in real features, trying always to improve the model.
 - CHARACTERISTICS: Involves thinking and know about the data
 - EXAMPLE: Instead have 2 features: weigth and height // we can do a IMC feature = weight / height²
 
 ## ANALYSES OF TARGET (Y)
-
 **TARGET Y**
 - DEFINITION: Check the target understanding better the data and try to improve more.
 - CHARACTERISTICS:
