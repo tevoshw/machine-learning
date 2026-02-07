@@ -72,12 +72,12 @@
 
 **SKEWED DATA**
 - TREAT: Check the asymmetric, if have, right or left, and then remove these data (extreme values) or drop rows with unrealistic outliers
-- SKEWED: .skew()
+- SKEWED: .skew() (if skew > 1 (right and treat) or if skew < -1 (left and treat))
 - REMOVE: .drop(columns = [])
 
 **OUTLIERS**
 - TREAT: Check if have, and them remove if's necessary
-- CHECK OUTLIERS: BOXPLOT
+- CHECK OUTLIERS: BOXPLOT, IQR methods
 - REMOVE: .drop(columns = [])
 
 **SCALE AWARENESS**
