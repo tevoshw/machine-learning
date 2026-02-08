@@ -95,6 +95,14 @@
 VISUALIZE:
 1. Histogram
 
+**TARGET Y**
+- DEFINITION: Check the target understanding better the data and try to improve more.
+- CHARACTERISTICS:
+1. Type of the target
+2. Distribution of the target
+3. Check outliers in target
+- EXAMPLE: 90% of the targets are 'spam' and 10% are 'not spam'
+- VISUALIZE: SCATTER, BOXPLOT and more
 
 ## RELATION BETWEEN FEATURES
 **HIGH CORRELATION**
@@ -123,23 +131,9 @@ VISUALIZE:
 2. Harm models based in median or gradient (linear regression, nn and more)
 - EXAMPLE: Age: 50 // Wage : 100.000, in this case the model can give more importance to the wage because the big numbers, and harm the model 
 
-**TARGET BALANCE**
-- DEFINITION: Verify and ensure the balance of target, to see if the targets (y) are well distributed or not
-- CHARACTERISTICS: 
-1. It's more common in classifier problems
-2. Can contains rares targets
-- EXAMPLE: 90% of the targets are 'spam' and 10% are 'not spam' 
 
 ## FEATURE ENGINEERING
 **FEATURE ENGINEERING**
 - DEFINITION: The process of select, transform and create new feature (unreal), based in real features, trying always to improve the model.
 - CHARACTERISTICS: Involves thinking and know about the data
 - EXAMPLE: Instead have 2 features: weigth and height // we can do a IMC feature = weight / height²
-
-## ANALYSES OF TARGET (Y)
-**TARGET Y**
-- DEFINITION: Check the target understanding better the data and try to improve more.
-- CHARACTERISTICS:
-1. Type of the target
-2. Distribution of the target
-3. Check outliers in target

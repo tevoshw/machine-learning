@@ -53,12 +53,9 @@
 ### NUMERIC
 
 **TIME FEATURES**
-- TREAT: Convert into datetime data and then, verify cardinality, null values, sort them and see if it's relevant feature to remove or maintain
+- TREAT: Convert into datetime data and then, verify cardinality, null values, sort them and see if it's relevant feature to remove or maintain, *CAUTION WITH DATA LEAKAGE*
 - CONVERT: .to_datetime()
-- CARDINALITY: .nunique()
-- NULL VALUES: isnull() + .sum()
-- SORT: .sort()
-- REMOVE: .drop(columns = [])
+
 
 ## RELATION BETWEEN THE FEATURES
 
@@ -90,6 +87,7 @@
 **TARGET BALANCE**
 - TREAT: Verify if the balance are OK
 - CHECK BALANCE: .values_counts (the target feature)
+- TREAT SKLEARN: `train_test_split(stratify = y)`
 
 # FEATURE ENGINEERING
 
