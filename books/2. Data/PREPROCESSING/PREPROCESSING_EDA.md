@@ -24,6 +24,7 @@
 - TREAT: Check if we have null values, so them remove the samples with this missing data, if are a lot of samples, we remove the feature with that high value with null data
 - NULL: .isnull() // .isnull() +.sum()
 - REMOVE: .drop(columns = [])
+- IMPUTATION:  `SimpleInputer(strategy = 'median')` from sklearn
 - WHEN DO? IF REMOVE BEFORE SPLIT, IF IMPUTATION AFTER SPLIT
 
 **NEGATIVE DATA**
