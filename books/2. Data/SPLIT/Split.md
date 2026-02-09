@@ -11,7 +11,7 @@
 - DEFINITION: Split the X (independent features) and Y (dependent features), and garanted that all it's ok
 - EXAMPLE:
 ``` 
-X = df.drop("target", axis=1)
+X = df.drop("target")
 Y = df["target"]
 ```
 
@@ -19,6 +19,11 @@ Y = df["target"]
 - DEFINITION: A way in functions that generate a random choose of the data
 - EXAMPLE: DATASET ->(1,2,3,4,5) RANDOM 2 -> (2,4,3,5,1) RANDOM 33 -> (1,3,5,4,2)
 - HANDS-ON: SKLEARN PARAMETERS in train_test_split(x,y random_seed = 42)
+
+**DATAFRAME TO ?**
+- The EDA and PREPROCESSING are doing with the data in DATAFRAME, but the model doesn't learning with these type of data, so we need to transform the data (dataframe -> ?)
+- We need to transform the dataframe in a numeric matrix , more common in NUMPY/TENSORS matrix, so `X.to_numpy() for NUMPY` and `torch.tensor(X) for TENSORS`
+> IN SKLEARN the lib does that for us, in the `model.fit()` so it doesn't necessary,
 
 ## 4.2 TYPES OF SET
 **TRAINING SET**
