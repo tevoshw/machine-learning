@@ -163,14 +163,17 @@ _HOW TO THINK LIKE A PROFESSIONAL, TO DO MACHINE LEARNING PROJECTS?_
 
 ### 5.5 SYSTEM E (MODEL)
 **GERAL**
-- More details addressed in /3. Models/Models Geral
-- We need to define 5 characteristics in this system.
-1. Parameters: The things that the model learn and stores
-2. Objective Function/Loss Function + Regularization (optional): A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more)
-3. Optimization method: How the model update the parameters (Gradient Descent, Adam, SGD)
-4. Hyperparameters: Control how the model learning (Complexity, regularization and more)5
-5. Metrics: A function the calcule the measure to test set
+- More details addressed in /3. Models
 
+**GRADIENT-BASED MODELS**
+- Parameters: The things that the model learn and stores
+- Loss Function: A function that measure the quality of the model for the data and parameters (MSE, CROSS-ENTROPY and more), with regularization options (L1, L2 and Elastic..)
+- Optimization method: How the model update the parameters (SGD, Momentum, Adam, AdamW, RMSProp...)
+1. HYPERPARAMETERS: LEARNING RATE (LR), GRADIENT CLIPPING AND WEIGHT DECAY
+2. TYPES: SGD, MOMENTUM (Nesterov), RMSProop, ADAM, AdamW
+3. STRATEGIES: LR SCHEDULER AND GRADIENT ACCUMULATION (GPU)
+
+**NON-GRADIENT BASES MODELS**
 
 
 # 6. TRAIN AND IMPROVE THE MODEL
