@@ -7,8 +7,8 @@ In Machine Learning, data is not just a collection of numbers; it's a hierarchy 
 | Term | Rank | Description | Analogous to | Python/NumPy Shape |
 | :--- | :---: | :--- | :--- | :--- |
 | **Scalar** | 0 | A single number | A point | `()` |
-| **Vector** | 1 | A list of numbers | A line | `(n,)` |
-| **Matrix** | 2 | A grid (Rows x Cols) | A spreadsheet | `(m, n)` |
+| **Vector** | 1 | A list of numbers | A line/feature | `(n,)` |
+| **Matrix** | 2 | A grid (Rows x Cols) | A spreadsheet (table) | `(m, n)` |
 | **Tensor** | 3+ | A multidimensional array | A cube or hypercube | `(d, m, n)` |
 
 ## 2. Deep Dive
