@@ -199,3 +199,14 @@
 - DEFINITION: The process of select, transform and create new feature (unreal), based in real features, trying always to improve the model.
 - CHARACTERISTICS: Involves thinking and know about the data
 - EXAMPLE: Instead have 2 features: weigth and height // we can do a IMC feature = weight / height²
+
+## PROBLEMS
+**TIME SERIES**
+- DEFINITION: We cannot always rely solely on mathematical equations or deterministic models. For unstable and dynamic phenomena—such as the financial market, sports, human behavior, weather, traffic, and the economy—the relationships do not address a fixed or exact mathematical question.
+- CHARACTERISTICS:
+1. The past influences the future.
+2. The order of the data matters -> we cannot shuffle it.
+3. Whenever using the chart, always use the 'DATE' feature with DD/MM/YY format.
+4. Lag: It's a value fron past, a feature (LAG7: 7 days of data)
+5. Forecasting: The term means predicting the future based on the past. It's similary with time series (Time series is the analysis of data points collected sequentially over time to understand past trends, patterns, and behaviors. Forecasting is the process of using those historical patterns to predict future values)
+
