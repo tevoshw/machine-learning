@@ -1,4 +1,7 @@
 1. Analyses for EDA
+	- Cat x Cat
+	- Num x Cat
+	- Feature Engineering
 2. Types of encoders, scalers, ts, fs, rd e discretização for EDA
 3. Outliers, Encoders, scalers, ts, fs, rd e discretização for PREPROCESSING
 
