@@ -1,4 +1,3 @@
-- Remover cardinalidade de quality check e coloca em EDA para PREPROCESSING
 1. Analyses for EDA
 	- Cat x Cat
 	- Num x Cat
