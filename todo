@@ -1,4 +1,4 @@
-EDA para DATA Engineering e Tunning
+EDA, EDAPLOTS E PREPROCESSING para DATA Engineering e Tunning
 Sumário pós EDA
 1. Analyses for EDA
 	- Cat x Cat
@@ -6,8 +6,7 @@ Sumário pós EDA
 	- Feature Engineering
 2. Types of encoders, scalers, ts, fs, rd e discretização for EDA
 3. Outliers, Encoders, scalers, ts, fs, rd e discretização for PREPROCESSING
-
-
+4. MODELS EM GERAL
 -----------------------------------------------------------------------
 - SEARCHS (Grid e Randomizer)
 
@@ -24,7 +23,6 @@ Naive
 NN
 
 Para entendermos redes neurais, veremos com mais clareza nossos objetivos
-
 Quando colocamos nossos dados em um espaço (feature space) de visualização, nossos dados viram pontos nesses espaço.
 Vamos dar de exemplo que nosso espaço é uma caixa de sapato (3	d) e nosso dados (todos viram pontos), se colocarmos todos os dados nós teríamos nesse exemplo duas esferas no espaço distantes, que facilmente poderíamos distinguir com linhas.
 
@@ -36,30 +34,11 @@ Vamos dar de exemplo que nosso espaço é uma caixa de sapato (3	d) e nosso dado
 PERCEPTRON: Arquitetura mais simples de uma NN (Somente inputs e output layers)
 	- Cada output layer é uma função linear, que vai gerar um valor F'
 	- Esse neurônio vai virar um outro número com a função de ativação (SIM ou NÃO (CLASSIFICAÇÃO BINÁRIA))(HEAVISIDE e SGN)
-
-
-
-
-
-
 O perceptron divide os dados, mas não consegue fazer curvas, deixando vulnerável a alguns tipos de dados, que por exemplo fazem curvas, então o MLP resolve isso.. mas pq?
 
 
- 
 MULTI LAYER PERCEPTRON
 	- Inputs layers, hidden layers, outputlayers
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Se nós colocarmos os valores dos y em um mapa 3d, em um perceptron uma linha linear separaria eles e etc
@@ -121,6 +100,7 @@ Uma analogia minecraft: O mundo é gerado e conforme vc vai andando você vai, v
 5. BACKPROP EM REDES NEURAIS: A loss é tipo (ativação(batchnorm(linear))),y)², então quando a gente inicializa a loss como a altura no gráfico do gradiente, essas funções vão junto, então precisamos dela no cálculo do backpropagation, pois elas são a loss
 
 6. Quebra de simetria: Se todos os neurônios fazem a mesma coisa, é como se sua rede de 1.000 neurônios tivesse, na prática, apenas 1 neurônio. Você joga fora todo o poder de processamento.
+
 
 
 TIPOS DE REDES
