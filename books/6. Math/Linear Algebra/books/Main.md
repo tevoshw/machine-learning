@@ -1,4 +1,3 @@
-Matemática
 
 MATRIZ: (100,10)
 - 100 rows
