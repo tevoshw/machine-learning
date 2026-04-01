@@ -42,3 +42,4 @@ print(f"Target values (100x1):\n{targets}\n")
 MSELoss = np.mean((Z - targets) ** 2)
 print(f"Mean Squared Error Loss: {MSELoss}\n")
 
+# For the next steps see /2. Calculus
