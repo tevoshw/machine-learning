@@ -1,127 +1,22 @@
-1. AlgebraMainMachineLearning.modelo
-2. Calculus
-3. ProbStats
-EDA, EDAPLOTS E PREPROCESSING para DATA Engineering e Tunning
-Sumário pós EDA
-1. Analyses for EDA
-	- Cat x Cat
-	- Num x Cat
-	- Feature Engineering
-2. Types of encoders, scalers, ts, fs, rd e discretização for EDA
-3. Outliers, Encoders, scalers, ts, fs, rd e discretização for PREPROCESSING
-4. MODELS EM GERAL
------------------------------------------------------------------------
-- SEARCHS (Grid e Randomizer)
+Week: Classic ML
+	- Day1: EDA and Preprocessing
+	- Day2: SVMs, Gaussin & Naive
+	- Day3: Maths before the algorithms
+	- Day4: Fine Tunning Models 
+	- Day5: Metrics (AUC-ROC, Precision-Recall Curve, FN, FP, probs de class) 
+	- Day6: Activation Funtions
+	- Day7: CrossValidation & overfitting
+	- Day8: Repo & Review
 
-METRICS
-- Métricas de probabilidade (classificação) -> .predict_probs	
-----------------------------------------------------------------------------------------------
-SVM
-------------------
-Gaussin
+Week 2: Classic NN
+	- Day1: Perceptons, XOR and more
+	- Day2: MLP
+	- Day3: Math before the algorithm
+	- Day4: Pytorch
+	- Day5: Regularization and Optimizations
+	- Day6: loss functions and activations
+	- Day7: Repo & Review
 
-Naive
-
-------------------
-NN
-
-Para entendermos redes neurais, veremos com mais clareza nossos objetivos
-Quando colocamos nossos dados em um espaço (feature space) de visualização, nossos dados viram pontos nesses espaço.
-Vamos dar de exemplo que nosso espaço é uma caixa de sapato (3	d) e nosso dados (todos viram pontos), se colocarmos todos os dados nós teríamos nesse exemplo duas esferas no espaço distantes, que facilmente poderíamos distinguir com linhas.
-
-1. Em Regressão nós aprendemos que estudamos os pesos, mas na realidade vamos olhar com um pouco mais atenção, em regressão nós projetamos uma função linear (f = aw + b), ou seja uma reta, e quem controla essa a inclinação dessa reta são os pesos e quem controla seu início é o bias, em termos mais claros, nós projetamos uma reta que o seu objetivo é ter a menor distância entre todos os pontos, porque assim a reta segue a função já criada pelos dados, e nós só 'estudamos e projetamos'
-2. Em Classificação nós aprendemos que nosso objetivo é traçar uma reta (reta que é originada pela função linear), e que essa reta é feita para separar os tipos de classes, (sim / não e etc)
-
-
-
-PERCEPTRON: Arquitetura mais simples de uma NN (Somente inputs e output layers)
-	- Cada output layer é uma função linear, que vai gerar um valor F'
-	- Esse neurônio vai virar um outro número com a função de ativação (SIM ou NÃO (CLASSIFICAÇÃO BINÁRIA))(HEAVISIDE e SGN)
-O perceptron divide os dados, mas não consegue fazer curvas, deixando vulnerável a alguns tipos de dados, que por exemplo fazem curvas, então o MLP resolve isso.. mas pq?
-
-
-MULTI LAYER PERCEPTRON
-	- Inputs layers, hidden layers, outputlayers
-
-
-Se nós colocarmos os valores dos y em um mapa 3d, em um perceptron uma linha linear separaria eles e etc
-	- Mas e se eles não fossem linear? e se fossem um circulo, ai modelos como tree, ensembles e neighbors são ferramentes incriveis, então porque utilizamos redes neurais? porque complicar?
-1. A maldição da dimensionalidade
-2. Feature Engineering
-3. Teto de aprendizagem
-
-Se os seus dados estão em uma tabela de Excel (com colunas bem definidas como idade, salário, CEP), Árvores e Ensembles (XGBoost, Random Forest) costumam ganhar das Redes Neurais! Eles são mais rápidos e precisos para dados estruturados. Agora, se os dados são "não estruturados" (Imagens, Áudio, Texto), as Redes Neurais são as únicas que conseguem "dobrar o espaço" de forma eficiente para entender o que está acontecendo.
-Normalmente dados em tabelas possuem relações lineares (mesmo que sejam polynominais de 2 grau ou etc), ou seja conseguimos utilizar modelos simples aqui (perceptrons) sem problema nenhum, USAR UMA NN SERIA MATAR UMA MOSCA COM UMA BAZUCA
-
-
-INPUT LAYERS (DADOS DAS FEATURES)
-HIDDEN LAYERS: GERAM DADOS (FORWARD + ACTIVATION FUNCTION)
-OUTPUT: (GERAM DADOS BRUTOS, POREM AGORA UM Y', RECEBEM OS DADOS DAS HIDDEN LAYERS)
-	- SE FOR DE REGRESSÃO TERIA APENAS 1 ÚNICO OUTPUT, SE FOSSE CLASSIFICAÇÃO TERIA 2+
-	- PODEM OU NÃO CONTER FUNÇÃO DE ATIVAÇÃO
-
-
-1. Quando você cria uma rede neural, o computador não começa os pesos com 0. Se todos os pesos fossem zero, todos os neurônios seriam gêmeos idênticos e a rede nunca aprenderia nada diferente. Em vez disso, a rede começa com pesos aleatórios pequenos (ex: neurônio 1 começa com 0.12 e o neurônio 2 com -0.05).
-	- Neurônio 1: Os pesos dele acabam se especializando em multiplicar o input "Peso" por um valor alto e "Tem Penas"  	por quase zero. Ele vira um especialista em Tamanho.
-	- Neurônio 2: Os pesos dele focam muito no input "Tem Penas". Ele vira um especialista em Textura
-
-
-2. - Usar funções de ativação sigmoid, faz a rede neural ter bo, pois o máximo que a derivada dela chega é 0.25, por isso atrasou anos a IA, e etc
-   - Na softmax teria que juntar todos os neurônios para dar 1, ou seja, o máximo que um poderia passar seria entre 0 e 1, e se um der 0.8, o os outros teriam que dar 0.2, perdendo mt informação
-   - Nesse caso o ReLu é o mais imponente, pois gera valores de 0 até o infinito, podendo passar uma informação mais importante
-
-3. DROPOUT desliga alguns neurônios no batch, evitando overfitting, como cada um tem seus pesos diferentes, eles consequentemente aprendem características diferentes, e assim um pode depender do outro, se neurônio X e Y forem ativos, o o modelo entende Z, mas com dados ruidosos as vezes só um ativa e o outro não, fazendo o modelo errar, então desligamos um neurônio no batch (depois ele volta ao normal) fazendo assim um neurônio aprender a parte dele e um pouco da do outro, o conhecimento fica mais distribuído
-
-
-
-
-
-
-*ENTENDER A MATEMÁTICA POR TRAZ
-4. BATCH NORMALIZATION: Se a rede neural inicializar um peso com valor muito grande, vai gerar um resultado muito grande
-Layer1 = 50
-Layer2 = 100   (Exploding Gradient)
-Layer3 = 1000
-... etc etc
-
-ou
-Layer1 = 0.005
-Layer2 = 0.00005 (Vanishing Gradient)
-Layer3 = 0.000005
-
-BATCH NORMALIZATION trouxe a solução, vai pegar os valores e transformar todos em escalas menores (possui hyperparametros), na onde a média tem que ser aproximadamente 0, e a variância aproximadamente 1, ou seja o vanishing viraria
-Layer1 = 0.005 -> -0.5
-Layer2 = 0.00005 -> -0.7
-Layer3 = 0.000005 -> -0.4
-
-
-Uma analogia minecraft: O mundo é gerado e conforme vc vai andando você vai, vamos colocar que nosso mundo é o gráfico do gradiente, sem o batch normalization poderiam existir platôs (planícies) e vales, com o batch normalization garante que esses 'bugs' não sejam gerados no nosso mundo (gráfico do gradiente)
-
-
-
-
-5. BACKPROP EM REDES NEURAIS: A loss é tipo (ativação(batchnorm(linear))),y)², então quando a gente inicializa a loss como a altura no gráfico do gradiente, essas funções vão junto, então precisamos dela no cálculo do backpropagation, pois elas são a loss
-
-6. Quebra de simetria: Se todos os neurônios fazem a mesma coisa, é como se sua rede de 1.000 neurônios tivesse, na prática, apenas 1 neurônio. Você joga fora todo o poder de processamento.
-
-
-
-TIPOS DE REDES
-	- PERCEPTRON (MODELOS COM 1 ÚNICO NEURONIO, ML CLASSICO)
-	 - MLP (todos se conectam com todos)
-		- PESOS = (N_INPUT * HIDDENS) + (N_HIDDENS * N_OUTPUTS) 
-	- CNNs (Os hiddens pegam apenas uma parte do input)
-		- FILTROS
-	- RNNs
-	- LTSMs
-	- TRANFORMERS
-	- GANs
-	- GNNs
-	- AUTOENCODERS
-	-
-
-
-
-
-
-------------------
+Week 3: CNNS
+	- Day1: Kernels, Features Maps, Pooling, Stride, Paddings, 
+	- Day2: LeNet
