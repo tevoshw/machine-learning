@@ -1,13 +1,3 @@
-Week: Classic ML
-	- Day1: EDA and Preprocessing OK
-	- Day2: SVMs, Gaussin & Naive OK
-	- Day3: Maths before the algorithms OK
-	- Day4: Fine Tunning Models OK
-	- Day5: Metrics (AUC-ROC, Precision-Recall Curve, FN, FP, probs de class) OK
-	- Day6: Activation Funtions
-	- Day7: CrossValidation & overfitting
-	- Day8: Repo & Review
-
 Week 2: Classic NN
 	- Day1: Perceptons, XOR and more
 	- Day2: MLP
